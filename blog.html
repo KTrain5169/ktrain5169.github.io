@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KTrain's blog</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>KTrain5369's blogs</h1>
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/new-post">New Post</a>
+</nav>
+
+<section id="content">
+    
+</section>
+
+<footer>
+    &copy; KTrain's mini-blog
+</footer>
+
+<script>
+    
+    const posts = [
+        { id: 1, title: "Post 1", content: "This is the content of post 1." },
+        { id: 2, title: "Post 2", content: "This is the content of post 2." }
+    ];
+
+    
+    function displayPosts() {
+        const contentSection = document.getElementById('content');
+        contentSection.innerHTML = '';
+
+        posts.forEach(post => {
+            const postElement = document.createElement('div');
+            postElement.innerHTML = `
+                <h2><a href="/post/${post.id}">${post.title}</a></h2>
+                <p>${post.content}</p>
+            `;
+            contentSection.appendChild(postElement);
+        });
+    }
+
+    
+    function displayPost(id) {
+        const contentSection = document.getElementById('content');
+        contentSection.innerHTML = '';
+
+        const post = posts.find(post => post.id === id);
+
+        if (post) {
+            const postElement = document.createElement('div');
+            postElement.innerHTML = `
+                <h2>${post.title}</h2>
+                <p>${post.content}</p>
+            `;
+            contentSection.appendChild(postElement);
+        } else {
+            contentSection.innerHTML = '<p>Post not found.</p>';
+        }
+    }
+
+    
+    const url = window.location.pathname;
+    if (url === '/') {
+        displayPosts();
+    } else if (url.startsWith('/post/')) {
+        const id = parseInt(url.substring(6)); 
+        displayPost(id);
+    }
+</script>
+
+</body>
+</html>
