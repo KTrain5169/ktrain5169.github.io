@@ -58,7 +58,6 @@ jobs:
         run: pnpm exec prettier --write .
 
       - name: Commit changes
-        if: steps.fix-formatting.outputs == success()
         id: commit-formatting
         uses: actions-go/push@v1
         with:
@@ -67,7 +66,7 @@ jobs:
           commit-message: "Format ${{ github.sha }} with Prettier"
 
       - name: Deploy website
-        if: needs.paths-filter.outputs.path-type == 'true'
+        if: always()
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
