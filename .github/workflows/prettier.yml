@@ -8,8 +8,28 @@ permissions:
   contents: write
 
 jobs:
+  paths-filter:
+    name: Filter paths
+    runs-on: ubuntu-latest
+    outputs:
+        path-type: ${{ steps.path-filter.outputs.maintenance }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Filter path modified
+        id: path-filter
+        uses: dorny/paths-filter@v3
+        with:
+            filters: |
+                maintenance:
+                    - 'README.md'
+                    - '.*'
+
   prettier-check:
     name: Check with Prettier
+    needs: paths-filter
+    if: needs.paths-filter.outputs.path-type == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -39,7 +59,7 @@ jobs:
         run: pnpm exec prettier --write .
 
       - name: Commit changes
-        if: success()
+        if: steps.fix-formatting.outputs == success()
         id: commit-formatting
         uses: actions-go/push@v1
         with:
@@ -48,6 +68,7 @@ jobs:
           commit-message: "Format ${{ github.sha }} with Prettier"
 
       - name: Deploy website
+        if: ${{ steps.path-filter.outputs.maintenance }} != 'true'
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
