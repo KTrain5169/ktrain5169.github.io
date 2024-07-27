@@ -1,4 +1,3 @@
-Personal site stuff, made for fun out of pure boredom.
-If you want to PR something, [do that here](https://github.com/KTrain5169/ktrain5169.github.io), I probably won't check that tab much though.
+# My personal website.
 
-Feel free to poke around or smth, idk
+I suck at Astro. Which is why my personal website is based off of it.

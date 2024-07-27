@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting.tsx';
+
+interface PageProps {
+  title: string;
+}
+
+const title: PageProps['title'] = "Welcome to My Personal Website";
+---
+
+<BaseLayout title={title}>
+  <h1>{title}</h1>
+  <p>This is the homepage.</p>
+  <Greeting name="Visitor" />
+</BaseLayout>
