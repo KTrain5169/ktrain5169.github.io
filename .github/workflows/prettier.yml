@@ -1,54 +1,54 @@
 name: Prettier check
 
 on:
-    push:
-    pull_request_target:
+  push:
+  pull_request_target:
 
 permissions:
-    contents: write
+  contents: write
 
 jobs:
-    prettier-check:
-        name: Check with Prettier
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout repo
-              uses: actions/checkout@v4
+  prettier-check:
+    name: Check with Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-            - name: Setup pnpm
-              uses: pnpm/action-setup@v4
-              with:
-                version: 9
-                
-            - name: Setup Node.js v20
-              uses: actions/setup-node@v4
-              with:
-                node-version: '20'
-                cache: 'pnpm'
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
 
-            - name: Install dependencies
-              run: pnpm install
-            
-            - name: Check with Prettier
-              id: check-formatting
-              run: pnpm exec prettier --check .
-            
-            - name: Auto-fix with Prettier on push
-              if: github.event_name == 'push' && steps.check-formatting.outcome == 'failure'
-              id: fix-formatting
-              run: pnpm exec prettier --write .
-            
-            - name: Commit changes
-              if: steps.fix-formatting.outcome == 'success'
-              id: commit-formatting
-              uses: actions-go/push@v1
-              with:
-                author-name: Actionsbot
-                author-email: actions@github.com
-                commit-message: "Format ${{ github.sha }} with Prettier"
-            
-            - name: Deploy website
-              uses: peter-evans/repository-dispatch@v3
-              with:
-                token: ${{ secrets.GITHUB_TOKEN }}
-                event-type: deploy-website
+      - name: Setup Node.js v20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Check with Prettier
+        id: check-formatting
+        run: pnpm exec prettier --check .
+
+      - name: Auto-fix with Prettier on push
+        if: github.event_name == 'push' && steps.check-formatting.outcome == 'failure'
+        id: fix-formatting
+        run: pnpm exec prettier --write .
+
+      - name: Commit changes
+        if: steps.fix-formatting.outcome == 'success'
+        id: commit-formatting
+        uses: actions-go/push@v1
+        with:
+          author-name: Actionsbot
+          author-email: actions@github.com
+          commit-message: "Format ${{ github.sha }} with Prettier"
+
+      - name: Deploy website
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: deploy-website

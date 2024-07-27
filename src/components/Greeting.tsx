@@ -1,5 +1,5 @@
 // src/components/Greeting.tsx
-import { FunctionComponent } from 'react';
+import { FunctionComponent } from "react";
 
 interface GreetingProps {
   name: string;
