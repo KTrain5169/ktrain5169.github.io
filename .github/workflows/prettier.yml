@@ -34,7 +34,7 @@ jobs:
         run: pnpm exec prettier --check .
 
       - name: Auto-fix with Prettier on push
-        if: github.event_name == 'push' && steps.check-formatting.outcome == 'failure'
+        if: github.event_name == 'push' && failure()
         id: fix-formatting
         run: pnpm exec prettier --write .
 
