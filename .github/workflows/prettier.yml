@@ -29,7 +29,6 @@ jobs:
   prettier-check:
     name: Check with Prettier
     needs: paths-filter
-    if: needs.paths-filter.outputs.path-type == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -68,7 +67,7 @@ jobs:
           commit-message: "Format ${{ github.sha }} with Prettier"
 
       - name: Deploy website
-        if: ${{ steps.path-filter.outputs.maintenance }} != 'true'
+        if: needs.paths-filter.outputs.path-type == 'true'
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
