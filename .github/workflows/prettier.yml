@@ -58,7 +58,7 @@ jobs:
         run: pnpm exec prettier --write .
 
       - name: Commit changes
-        if: failure()
+        if: steps.fix-formatting.outcome == success()
         id: commit-formatting
         uses: actions-go/push@v1
         with:
