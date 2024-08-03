@@ -32,24 +32,3 @@ jobs:
       - name: Check with Prettier
         id: check-formatting
         run: pnpm exec prettier --check .
-
-      - name: Auto-fix with Prettier on push
-        if: github.event_name == 'push' && failure()
-        id: fix-formatting
-        run: pnpm exec prettier --write .
-
-      - name: Commit changes
-        if: steps.fix-formatting.outcome == success()
-        id: commit-formatting
-        uses: actions-go/push@v1
-        with:
-          author-name: Actionsbot
-          author-email: actions@github.com
-          commit-message: "Format ${{ github.sha }} with Prettier"
-
-      - name: Deploy website
-        if: always()
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          event-type: deploy-website
