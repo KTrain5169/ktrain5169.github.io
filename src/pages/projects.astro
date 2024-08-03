@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="KTrain5169 | Website.">
+<Layout title="KTrain5169 | Projects.">
 	<main>
 		<svg
 			class="astro-a"
@@ -33,22 +33,29 @@ import Card from '../components/Card.astro';
 				</linearGradient>
 			</defs>
 		</svg>
-		<h1>Welcome to <span class="text-gradient">KTrain5169's website.</span></h1>
+		<h1>Welcome to <span class="text-gradient">KTrain5169's projects.</span></h1>
 		<p class="instructions">
 			Excuse the dust as I start learning to use Astro. It's my first time(ish)!
-			<strong>Want to help me learn?</strong> Choose one of the options below:
 		</p>
+        <p class="projects">
+            These are all projects that I've worked on in a middling to major capacity.
+        </p>
 		<ul role="list" class="link-card-grid">
 			<Card
-				href="https://github.com/KTrain5169/ktrain5169.github.io"
-				title="GitHub"
-				body="Open issues or Pull Requests and I'll look over them."
+				href="https://github.com/MicrocontrollersDev/Alternatives"
+				title="Microcontrollers' Alternatives website"
+				body="Provides alternatives to poorly-made Minecraft clients & mods."
 			/>
 			<Card
-				href=""
-				title="Discord"
-				body="I haven't set up a Discord yet. Check back later."
+				href="https://github.com/blryface/notessential"
+				title="NotEssential by blryface"
+				body="Alternatives to Essential, a Minecraft mod."
 			/>
+            <Card
+                href="https://github.com/StopMalwareContent/Extension"
+                title="StopMalwareContent by Nitrrine"
+                body="Blocks you from visitng sites that illegally distribute files, where malware can proliferate."
+            />
 		</ul>
 	</main>
 
