@@ -58,18 +58,18 @@ jobs:
             exit 1
           fi
       - name: Setup pnpm
-        if: ${{ steps.detect-package-manager.outputs.manager }} == "pnpm"
+        if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
         uses: pnpm/action-setup@v4
         with:
           version: "9.6"
       - name: Setup Node for pnpm
-        if: ${{ steps.detect-package-manager.outputs.manager }} == "pnpm"
+        if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
         uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: "pnpm"
       - name: Setup Node for others
-        if: ${{ steps.detect-package-manager.outputs.manager }} != "pnpm"
+        if: ${{ steps.detect-package-manager.outputs.manager != 'pnpm' }}
         uses: actions/setup-node@v4
         with:
           node-version: "20"
