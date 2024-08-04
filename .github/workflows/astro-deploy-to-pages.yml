@@ -68,7 +68,7 @@ jobs:
         with:
           node-version: "20"
           cache: "pnpm"
-      - name: Setup Node for others
+      - name: Setup Node for package managers
         if: ${{ steps.detect-package-manager.outputs.manager != 'pnpm' }}
         uses: actions/setup-node@v4
         with:
