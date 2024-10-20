@@ -1,0 +1,73 @@
+html,
+body {
+  height: 100%; /* Ensure full height */
+  margin: 0; /* Remove default margin */
+}
+
+body {
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Arrange children in a column */
+  background: linear-gradient(to bottom right, #1a1a1a, #333);
+  color: white;
+}
+
+main {
+  flex: 1; /* Allow main content to grow and fill available space */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+}
+
+header {
+  background-color: #222; /* Dark background for the header */
+  padding: 10px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center; /* Center navbar items */
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+}
+
+.navbar li {
+  margin: 0 15px; /* Space between items */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.main-title {
+  font-weight: bold; /* Make the top text bold */
+  text-align: center; /* Center the title */
+  margin: 20px 0; /* Space around the title */
+}
+
+.socials {
+  display: flex;
+  justify-content: center; /* Center the social links */
+  gap: 15px; /* Space between social links */
+  margin-bottom: 20px; /* Space below social links */
+}
+
+.main-button {
+  display: block; /* Allow centering */
+  margin: 0 auto; /* Center the button */
+  padding: 10px 20px; /* Button padding */
+  background-color: #444; /* Button background */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+footer {
+  text-align: center; /* Center text in footer */
+  padding: 10px;
+  background-color: #222; /* Dark background for footer */
+  position: relative; /* Ensure footer stays at the bottom */
+  bottom: 0; /* Align at the bottom */
+  width: 100%; /* Full width */
+}

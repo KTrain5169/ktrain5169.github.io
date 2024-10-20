@@ -1,22 +1,21 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{Astro.props.title}</title>
-    <link rel="stylesheet" href="/src/styles/global.css">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-      </nav>
-    </header>
+    <title>{title}</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <Header />
     <main>
-      <slot />
+        <slot />
     </main>
-    <footer>
-      <p>&copy; 2024 My Personal Website</p>
-    </footer>
-  </body>
+    <Footer />
+</body>
 </html>

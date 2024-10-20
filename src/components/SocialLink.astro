@@ -1,0 +1,9 @@
+---
+import Icon from './Icon.astro';
+const { platform, icon, url, iconType } = Astro.props;
+---
+
+<a href={url} class="social-link">
+  <Icon icon={icon} iconType={iconType} size={24} />
+  {platform}
+</a>

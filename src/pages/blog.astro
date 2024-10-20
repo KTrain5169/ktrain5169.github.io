@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPostBlock from '../components/BlogPostBlock.astro';
+---
+<BaseLayout title="Blog">
+    <h1>My Blog</h1>
+    <div class="blog-posts">
+        <BlogPostBlock title="Blog Post 1" link="/blog/post1" />
+        <BlogPostBlock title="Blog Post 2" link="/blog/post2" />
+        <!-- Add more blog posts -->
+    </div>
+</BaseLayout>
