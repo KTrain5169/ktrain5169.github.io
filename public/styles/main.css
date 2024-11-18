@@ -59,6 +59,7 @@ nav a {
   padding: 10px 20px; /* Button padding */
   background-color: #444; /* Button background */
   color: white; /* Button text color */
+  text-align: center; /* Center text in button */
   border: none; /* Remove border */
   cursor: pointer; /* Pointer cursor on hover */
 }
