@@ -15,12 +15,12 @@ const meta = {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <MetaTag {...meta} />
-    <title>{title}</title>
+    <title>{title} | KTrain5369</title>
     <meta name="description" content={description}>
 </head>
 <body class="h-full m-0 flex flex-col bg-gradient-to-br from-gray-900 to-gray-800 text-white">
     <Header />
-    {Astro.slots.default}
+    <slot />
     <Footer />
 </body>
 </html>

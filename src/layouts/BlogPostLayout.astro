@@ -1,0 +1,28 @@
+---
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+import MetaTag from "../components/MetaTag.astro"
+
+const { title, description, tag } = Astro.props;
+const meta = {
+    title: "Blog - ${title} | KTrain5369",
+    description: "${description}",
+    tags: "${tag}, blog"
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <MetaTag {...meta} />
+        <title>Blog - {title} | KTrain5369</title>
+        <meta name="description" content={description}>
+    </head>
+    <body>
+        <Header />
+        {Astro.slots.default}
+        <Footer />
+    </body>
+</html>
