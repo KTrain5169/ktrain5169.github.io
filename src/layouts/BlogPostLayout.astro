@@ -1,28 +1,35 @@
 ---
-import Header from "../components/Header.astro"
-import Footer from "../components/Footer.astro"
-import MetaTag from "../components/MetaTag.astro"
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import MetaTag from "../components/MetaTag.astro";
 
-const { title, description, tag } = Astro.props;
+const { title, description, tags, pubDate } = Astro.props;
+console.log({ title, description, tags, pubDate }); // Debugging log
 const meta = {
-    title: "Blog - ${title} | KTrain5369",
-    description: "${description}",
-    tags: "${tag}, blog"
-}
+    title: `${title} | KTrain5369`,
+    description: `${description}`,
+    tags: `${tags}, blog`
+};
 ---
-
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <MetaTag {...meta} />
-        <title>Blog - {title} | KTrain5369</title>
-        <meta name="description" content={description}>
-    </head>
-    <body>
-        <Header />
-        {Astro.slots.default}
-        <Footer />
-    </body>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <MetaTag {...meta} />
+    <title>{title} | KTrain5369</title>
+    <meta name="description" content={description}>
+    <link rel="icon" href="/favicon.png" type="image/png">
+</head>
+<body class="h-full m-0 flex flex-col bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <Header />
+    <main class="flex-1 flex flex-col items-center justify-center p-5">
+        <article class="bg-gray-700 rounded-lg shadow-lg p-5 max-w-3xl w-full">
+            <h1 class="text-3xl font-bold mb-5">{title}</h1>
+            <p class="text-sm text-gray-400 mb-5">Published on {new Date(pubDate).toLocaleDateString()}</p>
+            <slot />
+        </article>
+    </main>
+    <Footer />
+</body>
 </html>

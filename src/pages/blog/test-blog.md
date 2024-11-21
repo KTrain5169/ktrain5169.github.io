@@ -1,8 +1,9 @@
 ---
-title: 'Test blog post'
+layout: ../../layouts/BlogPostLayout.astro
+title: "Test blog post"
 pubDate: 2024-11-19
-description: 'Just testing out Astro's blog functionality with .md'
-author: 'KTrain5369'
+description: "Just testing out Astro's blog functionality with .md"
+author: "KTrain5369"
 tags: ["astro", "blog", "test"]
 ---
 
