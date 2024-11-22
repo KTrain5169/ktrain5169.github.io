@@ -1,6 +1,6 @@
 ---
 title: "Test blog post"
-pubDate: 2024-11-19
+publishDate: 'Nov 19 2024'
 description: "Just testing out Astro's blog functionality with .md"
 author: "KTrain5369"
 tags: ["astro", "blog", "test"]
