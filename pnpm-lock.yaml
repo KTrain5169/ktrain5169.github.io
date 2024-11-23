@@ -21,8 +21,8 @@ importers:
         specifier: ^0.453.0
         version: 0.453.0(react@18.3.1)
       simple-icons:
-        specifier: ^13.14.1
-        version: 13.14.1
+        specifier: ^13.17.0
+        version: 13.17.0
       simple-icons-astro:
         specifier: ^13.17.0
         version: 13.17.0(astro@4.16.14(rollup@4.27.4)(typescript@5.6.3))
@@ -1633,8 +1633,8 @@ packages:
     peerDependencies:
       astro: '>=2.7.1'
 
-  simple-icons@13.14.1:
-    resolution: {integrity: sha512-Syxm5ZpLgfePbZ8TXoOgiazaUqutE48eXhY8Mix2vK0uPji2rl+A2XG/sEyPBwIVj0tZeXuWolyTtMURASswTg==}
+  simple-icons@13.17.0:
+    resolution: {integrity: sha512-pn37igWUYFeTBLckTGjFpwvEYbZuIXc9AB2lza+bzxc/h/sxlNn323dxGlXKglxqMNgLkbnpX75hT6kgsgb5CQ==}
     engines: {node: '>=0.12.18'}
 
   simple-swizzle@0.2.2:
@@ -3766,7 +3766,7 @@ snapshots:
     dependencies:
       astro: 4.16.14(rollup@4.27.4)(typescript@5.6.3)
 
-  simple-icons@13.14.1: {}
+  simple-icons@13.17.0: {}
 
   simple-swizzle@0.2.2:
     dependencies:
