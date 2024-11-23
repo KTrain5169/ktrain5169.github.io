@@ -1,13 +1,23 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPostBlock from '../../components/BlogPostBlock.astro';
+import { getCollection } from 'astro:content';
+
+const blogPosts = await getCollection('blog');
 ---
+
 <BaseLayout title="Blog" description="KTrain5369's WIP blog" tags="blog">
     <h1 class="text-center text-3xl font-bold my-5">My Blog</h1>
     <div class="flex flex-col lg:flex-row flex-wrap justify-center items-center min-h-full gap-2 lg:gap-5 p-5">
-        <div class="bg-gray-700 rounded-lg shadow-lg p-5 mb-2 lg:mb-5">
-            <BlogPostBlock title="Testing blog post" link="/blog/test-blog" />
-        </div>
-        <!-- Add more blog posts as needed -->
+        {blogPosts.map(post => (
+            <div class="w-full lg:w-1/2 xl:w-1/3">
+                <BlogPostBlock 
+                    title={post.data.title} 
+                    link={post.data.link} 
+                    description={post.data.description} 
+                    publishDate={post.data.publishDate} 
+                />
+            </div>
+        ))}
     </div>
 </BaseLayout>
