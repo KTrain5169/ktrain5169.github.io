@@ -4,7 +4,7 @@ import Footer from "../components/Footer.astro";
 import MetaTag from "../components/MetaTag.astro";
 import FormatDate from "../components/FormatDate.astro";
 
-const { title, description, tags, creationDate, image } = Astro.props;
+const { title, description, tags, creationDate, image, maintainer, link, download, source, docs } = Astro.props;
 const meta = {
     title: `${title} (Project) | KTrain5369`,
     description: `${description}`,
@@ -27,7 +27,12 @@ const meta = {
         <article class="bg-gray-700 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 max-w-full sm:max-w-lg lg:max-w-3xl w-full">
             {image && <img src={image} alt={title} class="w-full h-auto rounded-t-lg mb-4 sm:mb-5" />}
             <h1 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5">{title}</h1>
+            {maintainer && <p class="text-xs sm:text-sm text-gray-400 mb-4 sm:mb-5">Maintained by {maintainer}</p>}
             {creationDate && <p class="text-xs sm:text-sm text-gray-400 mb-4 sm:mb-5">Created on <FormatDate date={creationDate} /></p>}
+            {link && <p class="text-xs sm:text-sm text-blue-400 mb-4 sm:mb-5 hover:text-blue-500"><a href={link}>View project</a></p>}
+            {download && <p class="text-xs sm:text-sm text-blue-400 mb-4 sm:mb-5 hover:text-blue-500"><a href={download}>Download</a></p>}
+            {source && <p class="text-xs sm:text-sm text-blue-400 mb-4 sm:mb-5 hover:text-blue-500"><a href={source}>View source</a></p>}
+            {docs && <p class="text-xs sm:text-sm text-blue-400 mb-4 sm:mb-5 hover:text-blue-500"><a href={docs}>View documentation</a></p>}
             <slot />
         </article>
     </main>
