@@ -17,12 +17,6 @@ importers:
       lucide-astro:
         specifier: ^0.460.0
         version: 0.460.0(astro@4.16.14(rollup@4.27.4)(typescript@5.6.3))
-      lucide-react:
-        specifier: ^0.460.0
-        version: 0.460.0(react@18.3.1)
-      simple-icons:
-        specifier: ^13.17.0
-        version: 13.17.0
       simple-icons-astro:
         specifier: ^13.17.0
         version: 13.17.0(astro@4.16.14(rollup@4.27.4)(typescript@5.6.3))
@@ -1150,10 +1144,6 @@ packages:
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
 
-  loose-envify@1.4.0:
-    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
-    hasBin: true
-
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
@@ -1164,11 +1154,6 @@ packages:
     resolution: {integrity: sha512-4iteWvZ2l/KjXXKnaKXdeCXOd2zsO6gqdhSm7krjYgDlb68mPpylPSvWciBP26h2IRKkorKqkkKCmkFBbChFiA==}
     peerDependencies:
       astro: '>=2.7.1'
-
-  lucide-react@0.460.0:
-    resolution: {integrity: sha512-BVtq/DykVeIvRTJvRAgCsOwaGL8Un3Bxh8MbDxMhEWlZay3T4IpEKDEpwt5KZ0KJMHzgm6jrltxlT5eXOWXDHg==}
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
   magic-string@0.30.12:
     resolution: {integrity: sha512-Ea8I3sQMVXr8JhN4z+H/d8zwo+tYDgHE9+5G4Wnrwhs0gaK9fXTKx0Tw5Xwsd/bCPTTZNRAdpyzvoeORe9LYpw==}
@@ -1516,10 +1501,6 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  react@18.3.1:
-    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
-    engines: {node: '>=0.10.0'}
-
   read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
 
@@ -1632,10 +1613,6 @@ packages:
     resolution: {integrity: sha512-PKPXhKQ4voYRA2yzl9JY+Q4K9mDxrNLypmT41KYr8DoMr+P1YJNPMh2bJ1lUboLfv107mErqrT3oZB6ycCoPYw==}
     peerDependencies:
       astro: '>=2.7.1'
-
-  simple-icons@13.17.0:
-    resolution: {integrity: sha512-pn37igWUYFeTBLckTGjFpwvEYbZuIXc9AB2lza+bzxc/h/sxlNn323dxGlXKglxqMNgLkbnpX75hT6kgsgb5CQ==}
-    engines: {node: '>=0.12.18'}
 
   simple-swizzle@0.2.2:
     resolution: {integrity: sha512-JA//kQgZtbuY83m+xT+tXJkmJncGMTFT+C+g2h2R9uxkYIrE2yy9sgmcLhCnw57/WSD+Eh3J97FPEDFnbXnDUg==}
@@ -3031,10 +3008,6 @@ snapshots:
 
   longest-streak@3.1.0: {}
 
-  loose-envify@1.4.0:
-    dependencies:
-      js-tokens: 4.0.0
-
   lru-cache@10.4.3: {}
 
   lru-cache@5.1.1:
@@ -3044,10 +3017,6 @@ snapshots:
   lucide-astro@0.460.0(astro@4.16.14(rollup@4.27.4)(typescript@5.6.3)):
     dependencies:
       astro: 4.16.14(rollup@4.27.4)(typescript@5.6.3)
-
-  lucide-react@0.460.0(react@18.3.1):
-    dependencies:
-      react: 18.3.1
 
   magic-string@0.30.12:
     dependencies:
@@ -3557,10 +3526,6 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  react@18.3.1:
-    dependencies:
-      loose-envify: 1.4.0
-
   read-cache@1.0.0:
     dependencies:
       pify: 2.3.0
@@ -3765,8 +3730,6 @@ snapshots:
   simple-icons-astro@13.17.0(astro@4.16.14(rollup@4.27.4)(typescript@5.6.3)):
     dependencies:
       astro: 4.16.14(rollup@4.27.4)(typescript@5.6.3)
-
-  simple-icons@13.17.0: {}
 
   simple-swizzle@0.2.2:
     dependencies:
