@@ -1,0 +1,39 @@
+---
+import * as LucideIcons from 'lucide-astro';
+import * as SimpleIcons from 'simple-icons-astro';
+
+// Props passed to the Icon component
+const { icon, iconType = 'lucide', size = 24, color = 'white' } = Astro.props;
+
+// Helper types to restrict icon name to valid keys
+type LucideIconKeys = keyof typeof LucideIcons;
+type SimpleIconKeys = keyof typeof SimpleIcons;
+
+const toPascalCase = (str: string) =>
+  str.replace(/(^\w|-\w)/g, (match) => match.replace('-', '').toUpperCase());
+
+let IconComponent: any = null;
+
+if (iconType.toLowerCase() === 'lucide') {
+  // Ensure icon is a valid key for LucideIcons and cast
+  const lucideIconName = toPascalCase(icon); // Convert lucideIconNames to PascalCase
+  IconComponent = LucideIcons[lucideIconName as LucideIconKeys];
+} else if (iconType.toLowerCase() === 'simple') {
+  // Ensure icon is a valid key for SimpleIcons and cast
+  const simpleIconName = toPascalCase(icon); // Convert simpleIconNames to PascalCase
+  IconComponent = SimpleIcons[simpleIconName as SimpleIconKeys];
+}
+
+// Handle the case when the icon is not found
+if (!IconComponent) {
+  console.error(`Icon ${icon} not found for ${iconType}`);
+}
+---
+
+{iconType.toLowerCase() === 'lucide' && IconComponent && (
+  <IconComponent color={color} size={size} />
+)}
+
+{iconType.toLowerCase() === 'simple' && IconComponent && (
+  <IconComponent color={color} size={size} />
+)}
