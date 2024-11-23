@@ -1,15 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialLink from '../components/SocialLink.astro';
-import { socialIcons } from '../utils/icons.ts';
+import FeaturedContent from '../components/FeaturedContent.astro';
 ---
 <BaseLayout title="Home" description="Homepage for KTrain5369's website" tags="webpage">
     <main class="flex-1 flex flex-col items-center justify-center">
         <h1 class="font-bold text-center my-5">KTrain5369</h1>
         <div class="flex justify-center gap-3.5 mb-5">
-            <SocialLink platform="GitHub" icon={socialIcons.github} url="https://github.com/KTrain5169/" />
-            <SocialLink platform="Bluesky" icon={socialIcons.twitter} url="https://bsky.app/profile/ktrain5369.me/" />
+            <SocialLink platform="GitHub" iconName='github' url="https://github.com/KTrain5169/" />
+            <SocialLink platform="Bluesky" iconName='twitter' url="https://bsky.app/profile/ktrain5369.me/" />
         </div>
         <button class="block mx-auto px-5 py-2.5 bg-gray-700 text-white text-center border-none cursor-pointer">Random button that does nothing</button>
+        
+        <!-- Featured Content Section -->
+        <section class="w-full max-w-4xl mt-10">
+            <h2 class="text-2xl font-bold text-center mb-5">Featured Content</h2>
+            <div class="flex flex-col lg:flex-row flex-wrap justify-center items-center gap-2 lg:gap-5">
+                <FeaturedContent title="NotEssential" description="A website about why the Essential mod is bad, and alternatives to it." link="/projects/notessential" type="Project" />
+                <FeaturedContent title="Unpacker" description="A Python program to unzip Modrinth modpacks and place them in a folder." link="/projects/unpacker" type="Project" />
+            </div>
+        </section>
     </main>
 </BaseLayout>

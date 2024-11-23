@@ -4,9 +4,9 @@ import Footer from "../components/Footer.astro";
 import MetaTag from "../components/MetaTag.astro";
 const { title, description, tags } = Astro.props;
 const meta = {
-    title: "${title} | KTrain5369",
-    description: "${description}",
-    tags: "${tags}"
+    title: `${title} | KTrain5369`,
+    description: `${description}`,
+    tags: `${tags}`
 }
 ---
 <!DOCTYPE html>
@@ -21,7 +21,9 @@ const meta = {
 </head>
 <body class="h-full m-0 flex flex-col bg-gradient-to-br from-gray-900 to-gray-800 text-white">
     <Header />
-    <slot />
+    <main class="flex-1 flex flex-col items-center justify-center p-4 sm:p-8 lg:p-12">
+        <slot />
+    </main>
     <Footer />
 </body>
 </html>

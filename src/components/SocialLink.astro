@@ -1,9 +1,9 @@
 ---
 import Icon from './Icon.astro';
-const { platform, icon, url, iconType } = Astro.props;
+const { platform, url, iconName, iconType = 'lucide' } = Astro.props;
 ---
 
-<a href={url} class="social-link">
-  <Icon icon={icon} iconType={iconType} size={24} />
+<a href={url} class="social-link flex items-center gap-2 text-white no-underline hover:text-blue-400">
+  <Icon icon={iconName} iconType={iconType} size={24} />
   {platform}
 </a>
