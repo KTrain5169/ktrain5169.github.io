@@ -1,6 +1,8 @@
 ---
 title: "NotEssential"
+page: "/projects/notessential"
 tags: ["minecraft", "modding", "website"]
+image: "NotEssential.ico"
 maintainer: "blryface, WorldWidePixel, Nitrrine and KTrain5369"
 link: "https://notessential.blurry.gay"
 source: "https://github.com/usevital/notessential"
