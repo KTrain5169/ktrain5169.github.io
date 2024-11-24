@@ -11,4 +11,4 @@ source: "https://github.com/KTrain5169/NoSocialMediaBans-Lite/"
 
 Basically a liter version of [No Social Media Bans](/projects/nosocialmediabans) for people with "shorter attention spans than TikTok/Shorts/Reels addicts"
 
-_Insert copy and paste from the No Social Media Bans page here_
+*Insert copy and paste from the No Social Media Bans page here\*
