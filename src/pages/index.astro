@@ -7,9 +7,22 @@ import FeaturedContent from '../components/FeaturedContent.astro';
     <main class="flex-1 flex flex-col items-center justify-center">
         <h1 class="font-bold text-center my-5">KTrain5369</h1>
         <div class="flex justify-center gap-3.5 mb-5">
-            <SocialLink platform="GitHub" iconName='github' iconType='lucide' url="https://github.com/KTrain5169/" />
-            <SocialLink platform="Bluesky" iconName='twitter' iconType='lucide' url="https://bsky.app/profile/ktrain5369.me/" />
+            <button class="block mx-auto px-5 py-2.5 bg-black text-white text-center border-none cursor-pointer">
+                <SocialLink platform="GitHub" iconName='github' iconType='lucide' url="https://github.com/KTrain5169/" />
+            </button>
+            <button class="block mx-auto px-5 py-2.5 bg-orange-700 text-white text-center border-none cursor-pointer">
+                <SocialLink platform="GitLab" iconName='gitlab' iconType='lucide' url="https://gitlab.com/KTrain5169" />
+            </button>
+            <button class="block mx-auto px-5 py-2.5 bg-blue-700 text-white text-center border-none cursor-pointer">
+                <SocialLink platform="Bluesky" iconName='twitter' iconType='lucide' url="https://bsky.app/profile/ktrain5369.me/" />
+            </button>
         </div>
+        <div class="flex justify-center gap-3.5 mb-5">
+            <button class="block mx-auto px-5 py-2.5 bg-black text-white text-center border-none cursor-pointer">
+                <SocialLink platform="GitHub (KTools2202)" iconName='github' iconType='lucide' url="https://github.com/KTools2202/" />
+            </button>
+        </div>
+        <br>
         <button class="block mx-auto px-5 py-2.5 bg-gray-700 text-white text-center border-none cursor-pointer">Random button that does nothing</button>
         
         <!-- Featured Content Section -->
@@ -17,7 +30,7 @@ import FeaturedContent from '../components/FeaturedContent.astro';
             <h2 class="text-2xl font-bold text-center mb-5">Featured Content</h2>
             <div class="flex flex-col lg:flex-row flex-wrap justify-center items-center gap-2 lg:gap-5">
                 <FeaturedContent title="NotEssential" description="A website about why the Essential mod is bad, and alternatives to it." link="/projects/notessential" type="Project" />
-                <FeaturedContent title="Unpacker" description="A Python program to unzip Modrinth modpacks and place them in a folder." link="/projects/unpacker" type="Project" />
+                <FeaturedContent title="unpacker" description="A Python program to unzip Modrinth modpacks and place them in a folder." link="/projects/unpacker" type="Project" />
             </div>
         </section>
     </main>
