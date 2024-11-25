@@ -4,7 +4,7 @@ import Footer from "../components/Footer.astro";
 import MetaTag from "../components/MetaTag.astro";
 import FormatDate from "../components/FormatDate.astro";
 
-const { title, description, tags, publishDate } = Astro.props;
+const { title, description, tags, publishDate, author } = Astro.props;
 const meta = {
     title: `${title} (Blog) | KTrain5369`,
     description: `${description}`,
@@ -27,6 +27,7 @@ const meta = {
         <article class="bg-gray-700 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 max-w-full sm:max-w-lg lg:max-w-3xl w-full">
             <h1 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5">{title}</h1>
             <p class="text-xs sm:text-sm text-gray-400 mb-4 sm:mb-5">Published on <FormatDate date={publishDate} /></p>
+            <p class="text-xs sm:text-sm text-gray-400 mb-4 sm:mb-5">Authored by {author}</p>
             <slot />
         </article>
     </main>

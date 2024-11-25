@@ -3,7 +3,7 @@ title: "No Social Media Bans (Lite)"
 page: "projects/nosocialmediabans-lite"
 tags: ["campaign", "website", "astro"]
 description: "A liter website explaining why blanket bans to social media is a bad idea."
-image: "NoSocialMediaBans.ico"
+image: "NoSocialMediaBans.png"
 maintainer: "KTrain5369"
 link: "https://ktrain5369.me/nsmb-lite/"
 source: "https://github.com/KTrain5169/NoSocialMediaBans-Lite/"

@@ -3,7 +3,7 @@ title: "No Social Media Bans"
 page: "projects/nosocialmediabans"
 tags: ["campaign", "website", "astro"]
 description: "A website explaining why blanket bans to social media is a bad idea."
-image: "NoSocialMediaBans.ico"
+image: "NoSocialMediaBans.png"
 maintainer: "KTrain5369"
 link: "https://ktrain5369.me/nsmb/"
 source: "https://github.com/KTrain5169/NoSocialMediaBans/"
