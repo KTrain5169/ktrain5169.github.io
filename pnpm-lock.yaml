@@ -15,18 +15,18 @@ importers:
         specifier: 5.0.3
         version: 5.0.3(jiti@1.21.6)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)
       lucide-astro:
-        specifier: 0.460.0
-        version: 0.460.0(astro@5.0.3(jiti@1.21.6)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0))
+        specifier: 0.468.0
+        version: 0.468.0(astro@5.0.3(jiti@1.21.6)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0))
       simple-icons-astro:
-        specifier: 13.18.0
-        version: 13.18.0(astro@5.0.3(jiti@1.21.6)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0))
+        specifier: 13.19.0
+        version: 13.19.0(astro@5.0.3(jiti@1.21.6)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0))
       tailwindcss:
         specifier: 3.4.15
         version: 3.4.15
     devDependencies:
       prettier:
-        specifier: 3.3.3
-        version: 3.3.3
+        specifier: 3.4.2
+        version: 3.4.2
 
 packages:
 
@@ -1135,8 +1135,8 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
-  lucide-astro@0.460.0:
-    resolution: {integrity: sha512-4iteWvZ2l/KjXXKnaKXdeCXOd2zsO6gqdhSm7krjYgDlb68mPpylPSvWciBP26h2IRKkorKqkkKCmkFBbChFiA==}
+  lucide-astro@0.468.0:
+    resolution: {integrity: sha512-jl4jmNX9KUje4sDYvdwZ6EjYQ200s+5+JZsNu/vQqINxqVO/Kn8GvPlFu2T7dvfDW6pP63J8hRwspnXF6RiGVA==}
     peerDependencies:
       astro: '>=2.7.1'
 
@@ -1452,8 +1452,8 @@ packages:
     resolution: {integrity: sha512-gYBeFTZLu055D8Vv3cSPox/0iTPtkzxpLroSYYA7WXgRi31WCJ51Uyl8ZiPeUUjyvs2MBzK+S8v9JVUgHU/Sqw==}
     engines: {node: '>=18.12'}
 
-  prettier@3.3.3:
-    resolution: {integrity: sha512-i2tDNA0O5IrMO757lfrdQZCc2jPNDVntV0m/+4whiDfWaTKfMNgR7Qz0NAeGz/nRqF4m5/6CLzbP4/liHt12Ew==}
+  prettier@3.4.2:
+    resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -1567,8 +1567,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  simple-icons-astro@13.18.0:
-    resolution: {integrity: sha512-mAazQctAzFX8KGbgGeLjxkn6L45QxL74/HyZdgWQTJczjgy/0R0P9f2lEpjmUuglT4FHwGf5bx8hh71iSQmbnQ==}
+  simple-icons-astro@13.19.0:
+    resolution: {integrity: sha512-3y/FOq35L4p3yPNPRO94eAepZDVFwQojB+eLtbwysZFqBea2xxJpNtOcIMSqz+9EEsOZ7sqG/OFyPH8fn1UW7g==}
     peerDependencies:
       astro: '>=2.7.1'
 
@@ -2880,7 +2880,7 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  lucide-astro@0.460.0(astro@5.0.3(jiti@1.21.6)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)):
+  lucide-astro@0.468.0(astro@5.0.3(jiti@1.21.6)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)):
     dependencies:
       astro: 5.0.3(jiti@1.21.6)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)
 
@@ -3359,7 +3359,7 @@ snapshots:
       find-yarn-workspace-root2: 1.2.16
       which-pm: 3.0.0
 
-  prettier@3.3.3: {}
+  prettier@3.4.2: {}
 
   prismjs@1.29.0: {}
 
@@ -3561,7 +3561,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  simple-icons-astro@13.18.0(astro@5.0.3(jiti@1.21.6)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)):
+  simple-icons-astro@13.19.0(astro@5.0.3(jiti@1.21.6)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)):
     dependencies:
       astro: 5.0.3(jiti@1.21.6)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)
 
