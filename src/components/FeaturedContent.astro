@@ -7,7 +7,7 @@ const lowerCaseType = type.toLowerCase();
     <p class="text-small text-grey">{type}</p>
     <h2 class="text-xl font-bold mb-2">{title}</h2>
     <p class="text-sm text-gray-300 mb-4">{description}</p>
-    <a href={link} class="text-blue-400 hover:text-blue-500">{lowerCaseType === 'project' ? 'Project Page' : 'Read More'}</a>
+    <a href={link} class="text-blue-400 hover:text-blue-500">{lowerCaseType === 'project' ? 'Learn more' : 'Read blog post'}</a>
     {projectpage && <a> | </a>}
     {projectpage && <a href={projectpage} class="text-blue-400 hover:text-blue-500">View project</a>}
 </div>
