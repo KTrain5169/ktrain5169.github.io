@@ -2,7 +2,7 @@
 title: "Documenting my experiences from working with Nuxt (via NotEssential)"
 tags: ["nuxt", "website", "nodejs", "documenting", "experiences"]
 description: "I document my experiences with Nuxt so far, through maintaining NotEssential"
-publishDate: "2024-12-8T21:25:46+1000"
+publishDate: "2024-12-08T21:25:46+1000"
 author: "KTrain5369"
 link: "/blog/working-with-nuxt"
 ---
