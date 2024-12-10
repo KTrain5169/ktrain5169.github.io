@@ -14,7 +14,7 @@ const formattedDate = new Date(publishDate).toLocaleString('en-US', {
 <a href={link} class="block text-white no-underline p-4 bg-gray-800 rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 w-full">
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between">
         <div class="flex-grow">
-            <h2 class="text-xl font-bold mb-2 whitespace-nowrap">{title}</h2>
+            <h2 class="text-xl font-bold mb-2">{title}</h2>
             <p class="text-sm text-gray-400 mb-2">{description}</p>
         </div>
         <p class="text-xs text-gray-500 sm:ml-4 sm:mt-0 mt-2">{formattedDate}</p>
