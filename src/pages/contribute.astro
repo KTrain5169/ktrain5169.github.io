@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout title="Contribute" description="Contribute to KTrain5369's projects" tags="contribute">
+    <main class="flex-1 flex flex-col items-center justify-center">
+        <h1 class="font-bold text-center my-5">Contribute</h1>
+        <p class="text-center items-center justify-center">This page lists contribution policies for this website, as well as how to begin contributing.</p>
+        <br>
+        <!--h2 class="italic text-center my-5">Begin contributing!</h2>
+        <p class="text-center items-center justify-center">This section can also be thought of as "How to set up your machine with the bare minimum to contribute anywhere!"</p-->
+
+        <h2 class="italic text-center my-5">Website (ktrain5169.github.io)</h2>
+        <p class="text-left">Extra pre-requisites:</p>
+        <ul class="text-left list-disc list-inside">
+            <li class="flex">
+                <Icon icon="nodedotjs" iconType="simple" size={24} class="mr-4" />
+                Node.js
+            </li>
+            <li class="flex">
+                <Icon icon="pnpm" iconType="simple" size={24} class="mr-4" />
+                pnpm
+            </li>
+        </ul>
+        <br>
+        <p class="text-left">To contribute:</p>
+        <ol class="list-decimal list-inside text-left">
+            <li class="flex">
+                <Icon icon="git-fork" iconType="lucide" size={24} class="mr-4" />
+                Fork the repository on GitHub.
+            </li>
+            <li class="flex">
+                <Icon icon="pnpm" iconType="simple" size={24} class="mr-4" />
+                Run "pnpm install" to install dependencies.
+            </li>
+            <li class="flex flex-col">
+                <Icon icon="git-branch" iconType="lucide" size={24} class="mr-4" />
+                Make your changes in a new branch.
+                <br>
+                <ui class="flex flex-col list-disc list-inside">
+                    <li class="flex">
+                        Create a new branch with "git branch (name)"
+                    </li>
+                    <li class="flex">
+                        Switch to it using "git switch (name)"
+                    </li>
+                    <li class="flex">
+                        Or, do both using "git switch --create (name)"
+                    </li>
+                </ui>
+                <br>
+                - DO NOT MAKE CHANGES ON YOUR MAIN/MASTER BRANCH!
+            </li>
+            <li class="flex">
+                <Icon icon="Astro" iconType="simple" size={24} class="mr-4" />
+                Run the Astro dev/preview server using either "pnpm dev" or "pnpm build-dev".
+                <br>
+                - "pnpm dev" gives you a live server that reacts to changes in the code.
+                - "pnpm build-dev" builds the site first and then previews that build.
+                <br>
+                Check your changes to ensure they work as intended.
+            </li>
+            <li class="flex">
+                <Icon icon="git-commit-horizontal" iconType="lucide" size={24} class="mr-4" />
+                Commit your changes with "git commit" and push them to your fork using "git push".
+            </li>
+            <li class="flex">
+                <Icon icon="git-pull-request-create-arrow" iconType="lucide" size={24} class="mr-4" />
+                Submit a pull request for review.
+            </li>
+            <li class="flex">
+                <Icon icon="message-circle" iconType="lucide" size={24} class="mr-4" />
+                Await for review and approval.
+            </li>
+        </ol>
+    </main>
+</BaseLayout>
