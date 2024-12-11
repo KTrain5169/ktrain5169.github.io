@@ -57,6 +57,14 @@ jobs:
             echo "Couldn't determine package manager. Maybe check your lockfile?"
             exit 1
           fi
+      - name: Cache deps
+        uses: actions/cache@v3
+        with:
+          path: |
+            .astro
+            node_modules
+          key: ${{ runner.os }}-astro-${{ github.ref_name }}
+          restore-keys: ${{ runner.os }}-astro-
       - name: Setup pnpm
         if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
         uses: pnpm/action-setup@v4
@@ -68,6 +76,7 @@ jobs:
         with:
           node-version: "20"
           cache: "pnpm"
+          cache-dependency-path: ${{ env.BUILD_PATH }}/${{ steps.detect-package-manager.outputs.lockfile }}
       - name: Setup Node for package managers
         if: ${{ steps.detect-package-manager.outputs.manager != 'pnpm' }}
         uses: actions/setup-node@v4

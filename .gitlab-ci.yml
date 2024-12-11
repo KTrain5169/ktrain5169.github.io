@@ -4,6 +4,21 @@ before_script:
   # Install pnpm globally
   - npm install -g pnpm
 
+test:
+  script:
+    # Install dependencies using pnpm
+    - pnpm install --frozen-lockfile
+    # Run the checks
+    - pnpm exec astro check
+
+lint:
+  script:
+    # Install dependencies using pnpm
+    - pnpm install --frozen-lockfile
+    # Run the linter
+    - pnpm exec prettier --check .
+  allow_failure: true
+
 pages:
   script:
     # Install dependencies using pnpm
@@ -14,6 +29,11 @@ pages:
     - rm -rf public
     - mv dist public
   pages: true # Specifies this is a Pages job
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules
+      - .astro/
   artifacts:
     paths:
       - public
