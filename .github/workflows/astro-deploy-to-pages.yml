@@ -1,3 +1,5 @@
+# @format
+
 # Sample workflow for building and deploying an Astro site to GitHub Pages
 #
 # To get started with Astro see: https://docs.astro.build/en/getting-started/
@@ -26,8 +28,28 @@ env:
   # BUILD_PATH: subfolder
 
 jobs:
+  check-ci-change:
+    name: Check CI change
+    runs-on: ubuntu-latest
+    outputs:
+      ci_change: ${{ steps.check_commit.outputs.ci_change }}
+    steps:
+      - name: Check commit message
+        id: check_commit # Step ID for referencing later
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const commitMessage = github.event.head_commit.message;
+
+            // Check if the commit message contains "ci(gitlab)" or "ci(gl)" case-insensitively
+            const ciChange = /ci\((gitlab|gl)\)/i.test(commitMessage);
+
+            // Set the output variable ci_change to true or false
+            core.setOutput("ci_change", ciChange.toString());
   build:
     name: Build
+    needs: check-ci-change
+    if: ${{ needs.check-ci-change.outputs.ci_change != 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

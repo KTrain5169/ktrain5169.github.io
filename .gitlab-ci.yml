@@ -10,6 +10,9 @@ test:
     - pnpm install --frozen-lockfile
     # Run the checks
     - pnpm exec astro check
+  rules:
+    - if: $CI_COMMIT_MESSAGE /^ci\((github|gh)\)\s*/i
+      when: always
 
 lint:
   script:
@@ -18,6 +21,9 @@ lint:
     # Run the linter
     - pnpm exec prettier --check .
   allow_failure: true
+  rules:
+    - if: $CI_COMMIT_MESSAGE /^ci\((github|gh)\)\s*/i
+      when: always
 
 pages:
   script:
@@ -37,3 +43,6 @@ pages:
   artifacts:
     paths:
       - public
+  rules:
+    - if: $CI_COMMIT_MESSAGE /^ci\((github|gh)\)\s*/i
+      when: always
