@@ -1,0 +1,18 @@
+image: node:20
+
+before_script:
+  # Install pnpm globally
+  - npm install -g pnpm
+
+pages:
+  script:
+    # Install dependencies using pnpm
+    - pnpm install --frozen-lockfile
+    # Build the Astro site
+    - pnpm exec astro build
+    # Move the build output to 'public' for GitLab Pages
+    - rm -rf public
+    - mv dist public
+  artifacts:
+    paths:
+      - public
