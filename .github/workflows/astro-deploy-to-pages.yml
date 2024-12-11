@@ -30,33 +30,27 @@ env:
 jobs:
   check-commit:
     runs-on: ubuntu-latest
+    outputs:
+      ci_change: ${{ steps.github-script.outputs.is_relevant_commit }}
     steps:
       - name: Print commit message
+        id: print-commit-msg
         run: |
-          echo "Commit message: ${{ github.event.head_commit.message }}"
-  check-ci-change:
-    name: Check CI change
-    runs-on: ubuntu-latest
-    outputs:
-      ci_change: ${{ steps.check_commit.outputs.ci_change }}
-    steps:
-      - name: Check commit message
-        id: check_commit # Step ID for referencing later
+          echo "commit_msg=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+      - name: GitHub JS scripting
+        id: github-script
         uses: actions/github-script@v7
         with:
           script: |
-            const commitMessage = github.event.head_commit.message ? github.event.head_commit.message : '';
-            console.log(`Commit message: ${commitMessage}`);
-
-            // Check if the commit message contains "ci(gitlab)" or "ci(gl)" case-insensitively
-            const ciChange = /ci\((gitlab|gl)\)/i.test(commitMessage);
-
-            // Set the output variable ci_change to true or false
-            core.setOutput("ci_change", ciChange.toString());
+            const commitMsg = process.env.COMMIT_HEADER;
+            const isCIChange = /^ci\((?:gitlab|gl)\):/i.test(commitMsg);
+            core.setOutput('is_relevant_commit', isCIChange.toString());
+        env:
+          COMMIT_HEADER: ${{ steps.print-commit-msg.outputs.commit_msg }}
   build:
     name: Build
-    needs: check-ci-change
-    if: ${{ needs.check-ci-change.outputs.ci_change != 'true' }}
+    needs: check-commit
+    if: ${{ github.event_name != 'push' || needs.check-commit.outputs.ci_change == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
