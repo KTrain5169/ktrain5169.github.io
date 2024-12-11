@@ -63,22 +63,16 @@ jobs:
           path: |
             .astro
             node_modules
-          key: ${{ runner.os }}-astro-${{ github.ref_name }}
-          restore-keys: ${{ runner.os }}-astro-
+          key: ${{ runner.os }}-astro-${{ github.repository_id }}-${{ github.ref_name }}
+          restore-keys: |
+            ${{ runner.os }}-astro-${{ github.repository_id }}-
+            ${{ runner.os }}-backup-astro-cache-${{ github.repository_id }}
       - name: Setup pnpm
         if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
         uses: pnpm/action-setup@v4
         with:
           version: "9.6"
-      - name: Setup Node for pnpm
-        if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "pnpm"
-          cache-dependency-path: ${{ env.BUILD_PATH }}/${{ steps.detect-package-manager.outputs.lockfile }}
-      - name: Setup Node for package managers
-        if: ${{ steps.detect-package-manager.outputs.manager != 'pnpm' }}
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"

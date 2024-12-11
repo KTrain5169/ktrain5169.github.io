@@ -1,0 +1,33 @@
+name: Backup cache
+
+on:
+    schedule:
+        - cron: '0 0 * * *'
+    workflow_dispatch:
+
+jobs:
+    backup-cache:
+        name: Backup cache
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v4
+              with:
+                  version: '9.6'
+            - name: Setup Node.js v20
+              uses: actions/setup-node@v2
+              with:
+                  node-version: '20'
+            - name: Build everything first
+              run: 
+                pnpm install --frozen-lockfile
+                pnpm exec astro build
+            - name: Backup cache
+              uses: actions/cache/save@v4.2.0
+              with:
+                path: |
+                  .astro
+                  node_modules
+                key: ${{ runner.os }}-backup-astro-cache-${{ github.repository_id }}
