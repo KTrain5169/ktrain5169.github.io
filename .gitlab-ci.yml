@@ -11,7 +11,7 @@ test:
     # Run the checks
     - pnpm exec astro check
   rules:
-    - if: $CI_COMMIT_MESSAGE /^ci\((github|gh)\)\s*/i
+    - if: $CI_COMMIT_MESSAGE !~ /^ci\((github|gh)\)\s*/i
       when: always
 
 lint:
@@ -22,7 +22,7 @@ lint:
     - pnpm exec prettier --check .
   allow_failure: true
   rules:
-    - if: $CI_COMMIT_MESSAGE /^ci\((github|gh)\)\s*/i
+    - if: $CI_COMMIT_MESSAGE !~ /^ci\((github|gh)\)\s*/i
       when: always
 
 pages:
@@ -44,5 +44,5 @@ pages:
     paths:
       - public
   rules:
-    - if: $CI_COMMIT_MESSAGE /^ci\((github|gh)\)\s*/i
+    - if: $CI_COMMIT_MESSAGE !~ /^ci\((github|gh)\)\s*/i
       when: always
