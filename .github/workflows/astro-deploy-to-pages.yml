@@ -28,6 +28,12 @@ env:
   # BUILD_PATH: subfolder
 
 jobs:
+  check-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print commit message
+        run: |
+          echo "Commit message: ${{ github.event.head_commit.message }}"
   check-ci-change:
     name: Check CI change
     runs-on: ubuntu-latest
