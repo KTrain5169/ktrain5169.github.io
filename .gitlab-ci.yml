@@ -13,6 +13,7 @@ pages:
     # Move the build output to 'public' for GitLab Pages
     - rm -rf public
     - mv dist public
+  pages: true # Specifies this is a Pages job
   artifacts:
     paths:
       - public
