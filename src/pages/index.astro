@@ -6,18 +6,45 @@ import FeaturedContent from '../components/FeaturedContent.astro';
 <BaseLayout title="Home" description="Homepage for KTrain5369's website" tags="webpage">
     <main class="flex-1 flex flex-col items-center justify-center">
         <h1 class="font-bold text-center my-5">KTrain5369</h1>
-        <div class="flex justify-center gap-3.5 mb-5">
-            <SocialLink platform="GitHub" iconName='github' url="https://github.com/KTrain5169/" />
-            <SocialLink platform="Bluesky" iconName='twitter' url="https://bsky.app/profile/ktrain5369.me/" />
+        <div class="flex lg:flex-row flex-col justify-center gap-3.5 mb-5">
+            <button class="block mx-auto px-5 py-2.5 bg-black text-white text-center border-none cursor-pointer">
+                <SocialLink platform="GitHub" iconName='github' iconType='lucide' url="https://github.com/KTrain5169/" />
+            </button>
+            <button class="block mx-auto px-5 py-2.5 bg-orange-700 text-white text-center border-none cursor-pointer">
+                <SocialLink platform="GitLab" iconName='gitlab' iconType='lucide' url="https://gitlab.com/KTrain5169" />
+            </button>
+            <button class="block mx-auto px-5 py-2.5 bg-blue-500 text-white text-center border-none cursor-pointer">
+                <SocialLink platform="Bluesky" iconName='bluesky' iconType='simple' url="https://bsky.app/profile/ktrain5369.me/" />
+            </button>
+            <button class="block mx-auto px-5 py-2.5 bg-indigo-700 text-white text-center border-none cursor-pointer">
+                <SocialLink platform="Discord" iconName='discord' iconType='simple' url="https://discord.gg/G6YvWhctjk" />
+            </button>
+            <button class="block mx-auto px-5 py-2.5 bg-purple-700 text-white text-center border-none cursor-pointer">
+                <SocialLink platform="Twitch" iconName='twitch' iconType='simple' url="https://www.twitch.tv/ktrain5369" />
+            </button>
+            <button class="block mx-auto px-5 py-2.5 bg-red-700 text-white text-center border-none cursor-pointer">
+                <SocialLink platform="YouTube" iconName='youtube' iconType='simple' url="https://www.youtube.com/@KTrain5369" />
+            </button>
         </div>
+        <br>
+        <div class="flex lg:flex-row flex-col justify-center gap-3.5 mb-5">
+            <button class="block mx-auto px-5 py-2.5 bg-black text-white text-center border-none cursor-pointer">
+                <SocialLink platform="GitHub (KTools2202)" iconName='github' iconType='lucide' url="https://github.com/KTools2202/" />
+            </button>
+            <button class="block mx-auto px-5 py-2.5 bg-orange-700 text-white text-center border-none cursor-pointer">
+                <SocialLink platform="GitLab (KTools2202)" iconName='gitlab' iconType='lucide' url="https://gitlab.com/KTools2202/" />
+            </button>
+        </div>
+        <br>
         <button class="block mx-auto px-5 py-2.5 bg-gray-700 text-white text-center border-none cursor-pointer">Random button that does nothing</button>
         
         <!-- Featured Content Section -->
-        <section class="w-full max-w-4xl mt-10">
+        <section class="flex flex-col w-full sm:w-fit max-w-4xl mt-10">
             <h2 class="text-2xl font-bold text-center mb-5">Featured Content</h2>
-            <div class="flex flex-col lg:flex-row flex-wrap justify-center items-center gap-2 lg:gap-5">
-                <FeaturedContent title="NotEssential" description="A website about why the Essential mod is bad, and alternatives to it." link="/projects/notessential" type="Project" />
-                <FeaturedContent title="Unpacker" description="A Python program to unzip Modrinth modpacks and place them in a folder." link="/projects/unpacker" type="Project" />
+            <div class="flex flex-col flex-wrap justify-center items-center gap-2 lg:gap-5">
+                <FeaturedContent title="NoSocialMediaBans" description="A website campaigning against blanket bans on social media." link="/projects/nosocialmediabans" type="Project" projectpage="https://ktrain5369.me/nsmb/" />
+                <FeaturedContent title="NotEssential" description="A website about why the Essential mod is bad, and alternatives to it." link="/projects/notessential" type="Project" projectpage="https://notessential.blurry.gay/" />
+                <FeaturedContent title="My experiences working with Nuxt" description="I document my experiences working with Nuxt in a blog post." link="blog/working-with-nuxt" type="Blog" />
             </div>
         </section>
     </main>

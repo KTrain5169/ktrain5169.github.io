@@ -2,7 +2,7 @@ name: Sanity & formatting checks
 
 on:
   push:
-  pull_request_target:
+  pull_request:
 
 jobs:
   astro-check:
@@ -11,6 +11,17 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+
+      - name: Cache deps
+        uses: actions/cache@v3
+        with:
+          path: |
+            .astro
+            node_modules
+          key: ${{ runner.os }}-astro-check-${{ github.repository_id }}-${{ github.ref_name }}
+          restore-keys: |
+            ${{ runner.os }}-astro-check-${{ github.repository_id }}-
+            ${{ runner.os }}-astro-check-
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -37,6 +48,16 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
+      - name: Cache .astro and node_modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-prettier-lint-${{ github.repository_id }}-${{ github.ref_name }}
+          restore-keys: |
+            ${{ runner.os }}-prettier-lint-${{ github.repository_id }}-
+            ${{ runner.os }}-prettier-lint-
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -47,6 +68,7 @@ jobs:
         with:
           node-version: "20"
           cache: "pnpm"
+          cache-dependency-path: "./pnpm-lock.yaml"
 
       - name: npm ci
         run: pnpm install --frozen-lockfile

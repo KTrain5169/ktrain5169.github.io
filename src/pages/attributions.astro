@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import AttribsBlock from '../components/AttribsBlock.astro'
+---
+
+<BaseLayout title="Attributions" description="Certain site elements are made possible by other people/software. This page lists them." tags="attributions">
+    <main class="flex-1 flex flex-col items-center justify-center">
+        <h1 class="font-bold text-center my-5">Attributions</h1>
+        <p class="text-center items-center justify-center">Certain site elements are made possible by other people/software. This page lists them and how they helped/what they do.</p>
+        <a class="text-center items-center justify-center italic">Disclaimer: No person(s), group(s) or organization(s) listed here endorses this website or any of its content.</a>
+        <h2 class="font-bold text-center my-5">Website source</h2>
+        <div class="flex flex-col gap-4">
+            <AttribsBlock
+              name="Astro"
+              description="Astro is a modern static site generator, which was used to create this site."
+              url="https://astro.build"
+              iconName="Astro"
+              iconType="simple"
+            />
+            <AttribsBlock
+              name="TailwindCSS"
+              description="TailwindCSS is a utility-first CSS framework, used to make styling this site less of a headache."
+              url="https://tailwindcss.com"
+              iconName="Tailwindcss"
+              iconType="simple"
+            />
+            <AttribsBlock
+              name="TypeScript"
+              description="TypeScript is a typed superset of JavaScript, used with Astro's content collections feature. It also helps with code completion and error checking."
+              url="https://typescriptlang.org"
+              iconName="Typescript"
+              iconType="simple"
+            />
+            <AttribsBlock
+              name="Node.js"
+              description="Node.js is a JavaScript runtime, used here because the various technologies to build the site is on Node.js."
+              url="https://nodejs.org"
+              iconName="Nodedotjs"
+              iconType="simple"
+            />
+            <AttribsBlock
+              name="pnpm"
+              description="pnpm is a fast, disk space efficient package manager, used to install the dependencies for this site."
+              url="https://pnpm.io"
+              iconName="Pnpm"
+              iconType="simple"
+            />
+            <AttribsBlock
+              name="npm"
+              description="npm is the bundled package manager for Node.js, currently temporarily replacing pnpm for managing packages on local environment (no longer true). They also run the npm registry for storing Node.js packages."
+              url="https://npmjs.org"
+              iconName="Npm"
+              iconType="simple"
+            />
+            <AttribsBlock
+              name="Simple Icons"
+              description="Simple Icons is a collection of SVG icons for popular brands, used to add logos to various elements such as this page."
+              url="https://simpleicons.org/"
+              iconName="Simpleicons"
+              iconType="simple"
+            />
+            <AttribsBlock
+              name="Lucide Icons"
+              description="Lucide Icons is another SVG icons collection for various things around us, used to add small icons to various elements."
+              url="https://lucide.dev/"
+              iconName="Lucide"
+              iconType="simple"
+            />
+        </div>
+        <h2 class="font-bold text-center my-5">Code hosting & maintenance</h2>
+        <div class="flex flex-col gap-4">
+            <AttribsBlock
+              name="Git"
+              description="Git is a distributed version control system for code, used for version control on this site."
+              url="https://git-scm.com/"
+              iconName="Git"
+              iconType="simple"
+            />
+            <AttribsBlock
+              name="GitHub"
+              description="GitHub is a code hosting platform, used to host the source code for this site."
+              url="https://github.com/"
+              iconName="github"
+              iconType="simple"
+            />
+            <AttribsBlock
+              name="GitLab"
+              description="GitLab is similar to GitHub as a code hostiing platform. A copy of this site's source code (mirror) is stored on GitLab."
+              url="https://gitlab.com/"
+              iconName="gitlab"
+              iconType="simple"
+            />
+            <AttribsBlock
+              name="Dependabot"
+              description="Dependabot is an app that checks for outdated/vulnerable dependencies in a repository, used to keep dependencies up-to-date."
+              url="https://github.com/dependabot"
+              iconName="Dependabot"
+              iconType="simple"
+            />
+        </div>
+        <h2 class="font-bold text-center my-5">Build, deployment & hosting</h2>
+        <div class="flex flex-col gap-4">
+            <AttribsBlock
+              name="GitHub Actions"
+              description="GitHub Actions is a CI/CD service integrated into GitHub, used to build & deploy this site."
+              url="https://github.com/apps/github-actions"
+              iconName="Githubactions"
+              iconType="simple"
+            />
+            <AttribsBlock
+              name="GitHub Pages"
+              description="GitHub Pages is a static website hosting service, used to serve this website as the origin point."
+              url="https://pages.github.com"
+              iconName="Githubpages"
+              iconType="simple"
+            />
+            <AttribsBlock
+              name="CloudFlare"
+              description="CloudFlare is a CDN and DNS provider, used to cache and serve this site to visitors. It also provides DDoS protection through its CDN network."
+              url="https://cloudflare.com"
+              iconName="Cloudflare"
+              iconType="simple"
+            />
+        </div>
+    </main>
+</BaseLayout>

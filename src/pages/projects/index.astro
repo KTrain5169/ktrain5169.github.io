@@ -1,16 +1,23 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProjectTile from '../../components/ProjectTile.astro';
+import { getCollection } from 'astro:content';
+
+const projectList = await getCollection('projects');
 ---
-<BaseLayout title="Projects" description="KTrain5369's projects list" tags="list">
-    <h1 class="text-center text-3xl font-bold my-5">My Projects</h1>
-    <div class="flex flex-col lg:flex-row flex-wrap justify-center items-center min-h-full gap-2 lg:gap-5 p-5 flex-grow">
-        <div class="bg-gray-700 rounded-lg shadow-lg p-5 mb-2 lg:mb-5">
-            <ProjectTile title="NotEssential" description="A website about why the Essential mod is bad, and alternatives to it." icon="NotEssential.ico" link="/projects/notessential" />
-        </div>
-        <div class="bg-gray-700 rounded-lg shadow-lg p-5 mb-2 lg:mb-5">
-            <ProjectTile title="unpacker" description="A Python program to unzip Modrinth modpacks and place them in a folder." link="/projects/unpacker" />
-        </div>
-        <!-- Add more projects as needed -->
+
+<BaseLayout title="Projects" description="Projects that KTrain5369 has contributed to." tags="list">
+    <h1 class="text-center text-3xl font-bold my-5">Projects I maintain or have contributed to</h1>
+    <div class="flex flex-col lg:flex-row flex-wrap justify-center items-center min-h-full gap-2 lg:gap-5 p-5">
+        {projectList.map(post => (
+            <div class="bg-gray-700 rounded-lg shadow-lg p-5 mb-2 lg:mb-5">
+                <ProjectTile 
+                    title={post.data.title}
+                    page={post.data.page}
+                    description={post.data.description}
+                    icon={post.data.image}
+                />
+            </div>
+        ))}
     </div>
 </BaseLayout>

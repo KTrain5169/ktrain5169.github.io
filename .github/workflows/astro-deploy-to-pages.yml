@@ -1,3 +1,5 @@
+# @format
+
 # Sample workflow for building and deploying an Astro site to GitHub Pages
 #
 # To get started with Astro see: https://docs.astro.build/en/getting-started/
@@ -26,8 +28,29 @@ env:
   # BUILD_PATH: subfolder
 
 jobs:
+  check-commit:
+    runs-on: ubuntu-latest
+    outputs:
+      ci_change: ${{ steps.github-script.outputs.is_relevant_commit }}
+    steps:
+      - name: Print commit message
+        id: print-commit-msg
+        run: |
+          echo "commit_msg=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
+      - name: GitHub JS scripting
+        id: github-script
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const commitMsg = process.env.COMMIT_HEADER;
+            const isCIChange = /^ci\((?:gitlab|gl)\):/i.test(commitMsg);
+            core.setOutput('is_relevant_commit', isCIChange.toString());
+        env:
+          COMMIT_HEADER: ${{ steps.print-commit-msg.outputs.commit_msg }}
   build:
     name: Build
+    needs: check-commit
+    if: ${{ github.event_name != 'push' || needs.check-commit.outputs.ci_change != 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -41,35 +64,38 @@ jobs:
             echo "runner=yarn" >> $GITHUB_OUTPUT
             echo "lockfile=yarn.lock" >> $GITHUB_OUTPUT
             exit 0
-          elif [ -f "${{ github.workspace }}/package-lock.json" ]; then
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci" >> $GITHUB_OUTPUT
-            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
-            echo "lockfile=package-lock.json" >> $GITHUB_OUTPUT
-            exit 0
           elif [ -f "${{ github.workspace }}/pnpm-lock.yaml" ]; then
             echo "manager=pnpm" >> $GITHUB_OUTPUT
             echo "command=install --frozen-lockfile" >> $GITHUB_OUTPUT
             echo "runner=pnpm dlx" >> $GITHUB_OUTPUT
             echo "lockfile=pnpm-lock.yaml" >> $GITHUB_OUTPUT
             exit 0
+          elif [ -f "${{ github.workspace }}/package-lock.json" ]; then
+            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "command=ci" >> $GITHUB_OUTPUT
+            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            echo "lockfile=package-lock.json" >> $GITHUB_OUTPUT
+            exit 0
           else
             echo "Couldn't determine package manager. Maybe check your lockfile?"
             exit 1
           fi
+      - name: Cache deps
+        uses: actions/cache@v3
+        with:
+          path: |
+            .astro
+            node_modules
+          key: ${{ runner.os }}-astro-${{ github.repository_id }}-${{ github.ref_name }}
+          restore-keys: |
+            ${{ runner.os }}-astro-${{ github.repository_id }}-
+            ${{ runner.os }}-backup-astro-cache-${{ github.repository_id }}
       - name: Setup pnpm
         if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
         uses: pnpm/action-setup@v4
         with:
           version: "9.6"
-      - name: Setup Node for pnpm
-        if: ${{ steps.detect-package-manager.outputs.manager == 'pnpm' }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "pnpm"
-      - name: Setup Node for package managers
-        if: ${{ steps.detect-package-manager.outputs.manager != 'pnpm' }}
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"

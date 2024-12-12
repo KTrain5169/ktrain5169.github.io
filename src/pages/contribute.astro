@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+---
+
+<BaseLayout title="Contribute" description="Contribute to KTrain5369's projects" tags="contribute">
+    <main class="flex-1 flex flex-col items-center justify-center">
+        <h1 class="font-bold text-center my-5">Contribute</h1>
+        <p class="text-center items-center justify-center">This page lists contribution policies for this website, as well as how to begin contributing.</p>
+        <br>
+        <!--h2 class="italic text-center my-5">Begin contributing!</h2>
+        <p class="text-center items-center justify-center">This section can also be thought of as "How to set up your machine with the bare minimum to contribute almost anywhere, really."</p-->
+
+        <h2 class="italic text-center my-5">Website (ktrain5169.github.io)</h2>
+        <p class="text-center">Extra pre-requisites:</p>
+        <ul class="text-center list-disc list-inside">
+            <li class="flex">
+                <Icon icon="nodedotjs" iconType="simple" size={24} class="mr-4" />
+                Node.js
+            </li>
+            <li class="flex">
+                <Icon icon="pnpm" iconType="simple" size={24} class="mr-4" />
+                pnpm
+            </li>
+        </ul>
+        <br>
+        <p class="text-center">To contribute:</p>
+        <ol class="list-decimal list-inside text-center">
+            <li class="flex">
+                <Icon icon="git-fork" iconType="lucide" size={24} class="mr-4" />
+                Fork the repository on GitHub or GitLab, then clone it to your computer or open web IDE.
+            </li>
+            <li class="flex">
+                <Icon icon="pnpm" iconType="simple" size={24} class="mr-4" />
+                Run "pnpm install" to install dependencies (local machine only).
+            </li>
+            <li class="flex">
+                <Icon icon="git-branch" iconType="lucide" size={24} class="mr-4" />
+                Make your changes in a new(!) branch.
+            </li>
+            <li class="flex">
+                <Icon icon="Astro" iconType="simple" size={24} class="mr-4" />
+                Run the Astro dev/preview server using either "pnpm dev" or "pnpm build-dev".
+                Check your changes to ensure they work as intended.
+                (local machine only)
+            </li>
+            <li class="flex">
+                <Icon icon="git-commit-horizontal" iconType="lucide" size={24} class="mr-4" />
+                Commit your changes with "git commit" and push them to your fork using "git push".
+            </li>
+            <li class="flex">
+                <Icon icon="git-pull-request-create-arrow" iconType="lucide" size={24} class="mr-4" />
+                Submit a pull request for review.
+            </li>
+            <li class="flex">
+                <Icon icon="message-circle" iconType="lucide" size={24} class="mr-4" />
+                Await for review and approval/change requests.
+            </li>
+        </ol>
+    </main>
+</BaseLayout>

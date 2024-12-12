@@ -1,6 +1,6 @@
 # My personal website
 
-I suck at Astro. Which is why my personal website is based off of it.
+I'm marginally good with using Astro. Which is why my personal website is based off of it.
 
 ## Checks
 

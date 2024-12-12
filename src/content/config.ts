@@ -2,21 +2,24 @@
 import { z, defineCollection } from "astro:content";
 // 2. Define your collection(s)
 const blogCollection = defineCollection({
-  type: "content", // v2.5.0 and later
+  type: "content",
   schema: z.object({
     title: z.string(),
     tags: z.array(z.string()),
     description: z.string().optional(),
     publishDate: z.coerce.date(),
     author: z.string(),
+    link: z.string(),
   }),
 });
 
 const projects = defineCollection({
-  type: "content", // v2.5.0 and later
+  type: "content",
   schema: z.object({
     title: z.string(),
+    page: z.string(),
     tags: z.array(z.string()),
+    description: z.string().optional(),
     image: z.string().optional(),
     creationDate: z.coerce.date().optional(),
     maintainer: z.string().optional(),
