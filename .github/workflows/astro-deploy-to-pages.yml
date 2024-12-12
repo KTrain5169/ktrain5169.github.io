@@ -50,7 +50,7 @@ jobs:
   build:
     name: Build
     needs: check-commit
-    if: ${{ github.event_name != 'push' || needs.check-commit.outputs.ci_change == 'true' }}
+    if: ${{ github.event_name != 'push' || needs.check-commit.outputs.ci_change != 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
