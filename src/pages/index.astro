@@ -36,7 +36,12 @@ import FeaturedContent from '../components/FeaturedContent.astro';
             </button>
         </div>
         <br>
-        <button class="block mx-auto px-5 py-2.5 bg-gray-700 text-white text-center border-none cursor-pointer">Random button that does nothing</button>
+        <button class="block mx-auto px-5 py-2.5 bg-gray-700 text-white text-center border-none cursor-pointer">
+			<a class="line-through">Random button that does nothing</a>
+		</button>
+		<button class="block mx-auto px-5 py-2.5 bg-white text-black text-center border-none cursor-pointer">
+			<SocialLink platform="Random Wikipedia page" iconName='Wikipedia' iconType='simple' url="https://wikipedia.org/wiki/Special:Random" color="black" />
+		</button>
         
         <!-- Featured Content Section -->
         <section class="flex flex-col w-full sm:w-fit max-w-4xl mt-10">
