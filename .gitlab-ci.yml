@@ -46,3 +46,4 @@ pages:
   rules:
     - if: $CI_COMMIT_MESSAGE !~ /^ci\((github|gh)\)\s*/i
       when: always
+    - if: '$CI_COMMIT_BRANCH == "main"'
