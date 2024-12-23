@@ -1,0 +1,83 @@
+---
+title: "Self-XSS attacks"
+publishDate: "2024-12-23T14:54:30+1000"
+description: "What is a self-XSS attack?"
+author: "KTrain5369"
+tags: ["security", "javascript", "xss"]
+link: "/blog/self-xss"
+---
+
+If you've been curious to pop open the browser console, you may have seen something like this on some sites:
+
+![Discord's warning against self-cross-site scripting attacks](/blog-images/discord-xss.png)
+<br>
+![Instagram's warning against self-cross-site scripting attacks](/blog-images/instagram-xss.png)
+<br>
+![Roblox's warning against self-cross-site scripting attacks](/blog-images/roblox-xss.png)
+
+_(Note to users of screenreaders: The rest of this post will refer to self-cross-site scripting attacks as self-XSS attacks.)_
+
+<br>
+
+This is a warning about "copy and pasting any text here", and for good reason. The console there is designed for developers to be able to tinker around with their sites using JavaScript. And just like files downloaded from the internet, running untrusted code in that console can put your account at risk.
+
+<br>
+
+I noticed the other day though, that <a href="https://bsky.app/" class="text-blue-400 hover:text-blue-500">Bluesky</a> doesn't have such a reminder. <a href="https://bsky.app/profile/ktrain5369.me/post/3ldv5t35uks25" class="text-blue-400 hover:text-blue-500">I posted about self-XSS attacks on Bluesky</a> since there are new people on Bluesky and I figured a reminder/warning wouldn't hurt, but I know that many people might not understand what this attack is and why it's so important _not_ to paste untrusted text strings into this "console". So today, I will dive a bit into what a self-XSS attack is and why it's always been a bit of an issue.
+
+<br>
+
+---
+
+<br>
+
+To understand self-XSS attacks, let's first understand XSS (cross-site scripting) attacks.
+
+<br>
+
+Some websites (most websites these days actually) use a technology called JavaScript. It's a scripting language that allows people to do cool stuff in your browser, and is what powers, for example, Google, Facebook, most other sites. It's also what powers a lot of this site's functionality too!
+
+<br>
+
+However, while it can _definitely_ be used for cool stuff, can also be weaponised to do some not very cool stuff, such as stealing browser cookies (which can contain your "token" to log into sites immediately!) or run, say, crypto miners.
+
+<br>
+
+However, these vulnerabilities can be easily patched by the website developer. And that is why attackers often look to the other part of interactions with web services: the clueless end users.
+
+<br>
+
+---
+
+<br>
+
+You know that saying of "never run any unknown programs on your computer"? That's sort of the same thing here.
+
+Basically, just like every EXE you have ever downloaded, you should always see if the script is coming from a trusted source. AI is not a trusted source. Some random page on a random site listed on Google Search is not a trusted source. And if you have no idea how to read code, you probably shouldn't be opening the console. Yet, self-XSS attacks have been a big enough issue for Facebook to dedicate a page of their Help Centre! Granted, a short one, but one nonetheless.
+
+<br>
+<br>
+
+Here's the usual flow of a self-XSS attack:
+
+<ul>
+    <li>
+        - The attacker grabs user attention by advertising the code as doing something not usually possible (e.g. "Unlock a secret feature by running this code!" or "Hack someone else's account using this!")
+    </li>
+    <li>
+        - The user sees it, then copies it and opens the browser console and pastes it in.
+    </li>
+    <li>
+        - The snippet of code is executed, which can often range in functionality but will almost *always* result in the account token being lost.
+    </li>
+</ul>
+
+<br>
+
+Usually, the account token is saved as a cookie on your local device, and this token allows the holder of the cookie to access that person's account, <a class="text-underline">even bypassing 2FA!</a> This isn't bad web design any means, but this is one of its flaws. It just goes to show, too, that at the end of the day, the weakest link in security will always be the user.
+
+<br>
+
+Stay safe out there, thanks for reading, and hopefully you learnt something new today!
+
+If you think that I haven't explained enough here or you need clarification, feel free to reach me on my Discord or Bluesky (links are on my front page).
