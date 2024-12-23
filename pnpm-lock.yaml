@@ -18,8 +18,8 @@ importers:
         specifier: 0.468.0
         version: 0.468.0(astro@5.1.1(jiti@2.4.2)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0))
       simple-icons-astro:
-        specifier: 13.21.0
-        version: 13.21.0(astro@5.1.1(jiti@2.4.2)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0))
+        specifier: 14.0.0
+        version: 14.0.0(astro@5.1.1(jiti@2.4.2)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0))
       tailwindcss:
         specifier: 3.4.16
         version: 3.4.16
@@ -1775,8 +1775,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  simple-icons-astro@13.21.0:
-    resolution: {integrity: sha512-gz7M5spG07vhn9xfs79MVNCNz02U1s6+wD4QFUwbvMSwVsWNuEYg7MZq7p286fOj+Dz5KRGjXbU4kr9Wwkruog==}
+  simple-icons-astro@14.0.0:
+    resolution: {integrity: sha512-nm0lB2R7bqrbVsps2F/hMyPAhKCSE64fkneo9THCdFqGBYN09yAYgRDMmlSOxSNjqt/N6BRo5O+8jgEXf1X3Mw==}
     peerDependencies:
       astro: '>=2.7.1'
 
@@ -4074,7 +4074,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  simple-icons-astro@13.21.0(astro@5.1.1(jiti@2.4.2)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)):
+  simple-icons-astro@14.0.0(astro@5.1.1(jiti@2.4.2)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)):
     dependencies:
       astro: 5.1.1(jiti@2.4.2)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)
 
