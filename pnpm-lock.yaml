@@ -15,8 +15,8 @@ importers:
         specifier: 5.1.5
         version: 5.1.5(jiti@2.4.2)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)
       lucide-astro:
-        specifier: 0.471.0
-        version: 0.471.0(astro@5.1.5(jiti@2.4.2)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0))
+        specifier: 0.473.0
+        version: 0.473.0(astro@5.1.5(jiti@2.4.2)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0))
       simple-icons-astro:
         specifier: 14.2.0
         version: 14.2.0(astro@5.1.5(jiti@2.4.2)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0))
@@ -1297,8 +1297,8 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
-  lucide-astro@0.471.0:
-    resolution: {integrity: sha512-4dLwQU0opG7X9y/etUCGO8Rwvn/7C/XVdnlfbdpIU3+fAIZPuQRxHppaCLlD+JIsVXvP3sfX1lJ2qn/QKMaOaQ==}
+  lucide-astro@0.473.0:
+    resolution: {integrity: sha512-MM4P4rwF9Lypb49TQKa3tbuDZqwrL36wI2O5UTJIuH5H+ugSYx9FUxr6j3DqTwxDclHbwX/VBt5f9OXfAE/zRQ==}
     peerDependencies:
       astro: '>=2.7.1'
 
@@ -3420,7 +3420,7 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  lucide-astro@0.471.0(astro@5.1.5(jiti@2.4.2)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)):
+  lucide-astro@0.473.0(astro@5.1.5(jiti@2.4.2)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)):
     dependencies:
       astro: 5.1.5(jiti@2.4.2)(rollup@4.27.4)(typescript@5.6.3)(yaml@2.6.0)
 
