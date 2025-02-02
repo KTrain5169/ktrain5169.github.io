@@ -1,6 +1,5 @@
 ---
 title: "No Social Media Bans (Lite)"
-page: "/projects/nosocialmediabans-lite"
 tags: ["campaign", "website", "astro"]
 description: "A liter website explaining why blanket bans to social media is a bad idea."
 image: "NoSocialMediaBans.png"

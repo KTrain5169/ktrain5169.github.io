@@ -13,7 +13,7 @@ const projectList = await getCollection('projects');
             <div class="bg-gray-700 rounded-lg shadow-lg p-5 mb-2 lg:mb-5">
                 <ProjectTile 
                     title={post.data.title}
-                    page={post.data.page}
+                    page={`/projects/${post.id.replace('.md', '')}`}
                     description={post.data.description}
                     icon={post.data.image}
                 />

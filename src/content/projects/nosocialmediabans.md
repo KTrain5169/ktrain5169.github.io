@@ -1,6 +1,5 @@
 ---
 title: "No Social Media Bans"
-page: "/projects/nosocialmediabans"
 tags: ["campaign", "website", "astro"]
 description: "A website explaining why blanket bans to social media is a bad idea."
 image: "NoSocialMediaBans.png"

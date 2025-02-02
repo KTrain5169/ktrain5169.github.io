@@ -6,7 +6,11 @@ import { getCollection } from 'astro:content';
 const blogPosts = await getCollection('blog');
 
 // Sort blog posts by newest publishDate first
-blogPosts.sort((a, b) => new Date(b.data.publishDate) - new Date(a.data.publishDate));
+blogPosts.sort((a, b) => {
+    const dateA = new Date(a.data.publishDate).getTime();
+    const dateB = new Date(b.data.publishDate).getTime();
+    return dateB - dateA; // Sort in descending order
+});
 ---
 
 <BaseLayout title="Blog" description="KTrain5369's WIP blog" tags="blog">
@@ -16,7 +20,7 @@ blogPosts.sort((a, b) => new Date(b.data.publishDate) - new Date(a.data.publishD
             <div class="bg-gray-700 rounded-lg shadow-lg p-5 mb-2 lg:mb-5">
                 <BlogPostBlock 
                     title={post.data.title} 
-                    link={post.data.link} 
+                    link={`/blog/${post.id.replace('.md', '')}`}
                     description={post.data.description} 
                     publishDate={post.data.publishDate} 
                 />

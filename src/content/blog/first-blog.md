@@ -4,7 +4,6 @@ publishDate: "2024-11-24T17:18:32+1000"
 description: "This is the first (real) blog post."
 author: "KTrain5369"
 tags: ["astro", "blog", "test"]
-link: "/blog/first-blog"
 ---
 
 Well, it's certainly something to be here.

@@ -1,6 +1,5 @@
 ---
 title: "Translator"
-page: "/projects/translator"
 tags: ["i18n", "translations", "python"]
 description: "Convert your sentences to silly text translations!"
 image: "Translator.ico"

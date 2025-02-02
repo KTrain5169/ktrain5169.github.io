@@ -1,6 +1,5 @@
 ---
 title: "unpacker"
-page: "/projects/unpacker"
 tags: ["minecraft", "python", "website"]
 description: "unpacker: unpacking Modrinth modpacks since 2024."
 maintainer: "KTrain5369"

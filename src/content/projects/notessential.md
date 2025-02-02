@@ -1,6 +1,5 @@
 ---
 title: "NotEssential"
-page: "/projects/notessential"
 tags: ["minecraft", "modding", "website"]
 image: "NotEssential.ico"
 maintainer: "blryface, WorldWidePixel, Nitrrine and KTrain5369"

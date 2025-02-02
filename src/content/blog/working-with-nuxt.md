@@ -4,7 +4,6 @@ tags: ["nuxt", "website", "nodejs", "documenting", "experiences"]
 description: "I document my experiences with Nuxt so far, through maintaining NotEssential"
 publishDate: "2024-12-08T21:25:46+1000"
 author: "KTrain5369"
-link: "/blog/working-with-nuxt"
 ---
 
 Disclaimer: I actually wasn't a maintainer of NotEssential at the start, so some details may not be correct, but I joined fairly early on commits-wise and some of the details still hold true to this day.

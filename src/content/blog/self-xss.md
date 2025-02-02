@@ -4,7 +4,6 @@ publishDate: "2024-12-23T14:54:30+1000"
 description: "What is a self-XSS attack?"
 author: "KTrain5369"
 tags: ["security", "javascript", "xss"]
-link: "/blog/self-xss"
 ---
 
 If you've been curious to pop open the browser console, you may have seen something like this on some sites:
