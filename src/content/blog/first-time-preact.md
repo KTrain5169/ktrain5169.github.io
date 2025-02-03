@@ -6,7 +6,7 @@ author: "KTrain5369"
 tags: ["preact", "blog", "first thoughts", "hands-on"]
 ---
 
-<a class="text-blue-300 hover:text-blue-500" href="https://preactjs.com">Preact</a> is a website development framework, similar to Astro & Nuxt (which I've talked about on this blog before). It's more like Nuxt in that it is a single-page application framework, meaning doesn't fully unload when you switch pages. It's an alternative to react that is smaller but still offers the same modern APIs.
+<a class="text-blue-300 hover:text-blue-500" href="https://preactjs.com">Preact</a> is a website development framework, similar to Astro & Nuxt (which I've talked about on this blog before). It's more like Nuxt in that it is a single-page application framework, meaning doesn't fully unload when you switch pages. It's an alternative to React that is smaller but still offers the same modern APIs.
 
 <br>
 
