@@ -13,7 +13,7 @@
     "format": "prettier --write"
   },
   "dependencies": {
-    "@astrojs/tailwind": "5.1.4",
+    "@astrojs/tailwind": "6.0.0",
     "astro": "5.2.3",
     "lucide-astro": "0.473.0",
     "simple-icons-astro": "14.5.0",
