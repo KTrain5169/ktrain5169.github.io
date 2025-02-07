@@ -26,6 +26,10 @@ In my internet lifetime, I've met amazing people and connected with tons of othe
 
 <br>
 
+(Edit: I forgot to mention, but names in **bold** are people that get a special shoutout)
+
+<br>
+
 Seriously. Looking back at this, it's quite impressive for me to be doing this considering my life. I for sure wouldn't have made it to my current position without everyone listed above. It's amazing how the internet can be such a place full of welcoming people, despite the reputation among normies.
 
 <br>
