@@ -86,6 +86,7 @@ jobs:
           path: |
             .astro
             node_modules
+            dist/
           key: ${{ runner.os }}-astro-${{ github.repository_id }}-${{ github.ref_name }}
           restore-keys: |
             ${{ runner.os }}-astro-${{ github.repository_id }}-
