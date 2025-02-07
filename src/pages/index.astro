@@ -6,6 +6,13 @@ import FeaturedContent from '../components/FeaturedContent.astro';
 <BaseLayout title="Home" description="Homepage for KTrain5369's website" tags="webpage">
     <main class="flex-1 flex flex-col items-center justify-center">
         <h1 class="font-bold text-center my-5">KTrain5369</h1>
+        
+        <!-- Announcement Banner -->
+        <div class="bg-red-500 text-black text-center p-3 mb-5">
+            <p>At around June/July, some or all of these accounts will be inactive.</p>
+            <a href="/blog/next-steps" class="text-blue-600 hover:underline hover:text-blue-500">Read more about that here.</a>
+        </div>
+        
         <div class="flex lg:flex-row flex-col justify-center gap-3.5 mb-5">
             <button class="block mx-auto px-5 py-2.5 bg-black text-white text-center border-none cursor-pointer">
                 <SocialLink platform="GitHub" iconName='github' iconType='lucide' url="https://github.com/KTrain5169/" />
@@ -28,6 +35,9 @@ import FeaturedContent from '../components/FeaturedContent.astro';
         </div>
         <br>
         <div class="flex lg:flex-row flex-col justify-center gap-3.5 mb-5">
+            <button class="block mx-auto px-5 py-2.5 bg-gray-500 text-white text-center border-none cursor-pointer">
+                <SocialLink platform="Website (KTools2202)" iconName="globe" iconType="lucide" url="https://ktools2202.github.io/" />
+            </button>
             <button class="block mx-auto px-5 py-2.5 bg-black text-white text-center border-none cursor-pointer">
                 <SocialLink platform="GitHub (KTools2202)" iconName='github' iconType='lucide' url="https://github.com/KTools2202/" />
             </button>
@@ -47,9 +57,10 @@ import FeaturedContent from '../components/FeaturedContent.astro';
         <section class="flex flex-col w-full sm:w-fit max-w-4xl mt-10">
             <h2 class="text-2xl font-bold text-center mb-5">Featured Content</h2>
             <div class="flex flex-col flex-wrap justify-center items-center gap-2 lg:gap-5">
+                <FeaturedContent title="Around 6 months from now, online me may disappear." description="It was an amazing ride, but it had to end sometime. I just didn't expect it to end so soon." link="blog/next-steps" type="Blog" />
+                <FeaturedContent title="First thoughts with Preact hands-on" description="I tried Preact and found it interesting enough to make a blog post about it." link="blog/first-time-preact" type="Blog" />
                 <FeaturedContent title="NoSocialMediaBans" description="A website campaigning against blanket bans on social media." link="/projects/nosocialmediabans" type="Project" projectpage="https://ktrain5369.me/nsmb/" />
                 <FeaturedContent title="NotEssential" description="A website about why the Essential mod is bad, and alternatives to it." link="/projects/notessential" type="Project" projectpage="https://notessential.blurry.gay/" />
-                <FeaturedContent title="My experiences working with Nuxt" description="I document my experiences working with Nuxt in a blog post." link="blog/working-with-nuxt" type="Blog" />
             </div>
         </section>
     </main>

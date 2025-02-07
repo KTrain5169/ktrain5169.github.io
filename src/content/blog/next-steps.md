@@ -1,0 +1,92 @@
+---
+title: "Mental health, coding, maths and life, and how it kinda links to my (potential) departure."
+publishDate: "2025-02-07T21:00:00+1000"
+description: "All good things may come to an end, no matter how hard you try to sustain it."
+author: "KTrain5369"
+tags: ["life", "maths", "mental", "goodbye"]
+---
+
+I have been on the internet for... well, it's hard to say because I don't keep track of it. And I doubt I can find a concrete answer with my accounts.
+But safe to say, quite a long time.
+
+<br>
+
+In my internet lifetime, I've met amazing people and connected with tons of others, including (and this counts as a shoutout section, sorted by no particular order):
+
+<ul>
+    <li>- The NotEssential and UseVital teams (<b>blryface</b>, <b>WorldWidePixel</b>, <b>Nitrrine</b>, devin and omo50) for essentially inducting me into the Minecraft modding space, no matter how minor of an impact I/we made. Extra shoutout to NotEssential since that got me way more into webdev than I first thought.
+    <li>- My current Hypixel guild masters, both current and former (<b>TheGoldenDragon</b> and <b>Lexvato</b>) for giving me a nice space to chat with other people.
+    <li>- The SkyClient and Polyfrost teams, for trusting me to handle their support tickets.
+    <li>- Certain Hypixel SkyBlock mod discords for putting up with my initial yappiness in their support system.
+    <li>- The Modrinth team for making their incredible stuff that I use, whether that be their mod hosting service or their API, and the Pyro team for letting me test Modrinth Servers early.
+    <li>- The Prism Launcher discord, for answering my question when I first got there and basically got myself into a ton of Minecraft modding related stuff.
+    <li>- The Pridecraft Studios folks for letting me automate translations after an accident.
+    <li>- And some other folks who I can't mention here, either because I forgot why they should get a shoutout or it's because of a couple of projects not quite released as of this moment.
+<ul>
+
+<br>
+
+Seriously. Looking back at this, it's quite impressive for me to be doing this considering my life. I for sure wouldn't have made it to my current position without everyone listed above. It's amazing how the internet can be such a place full of welcoming people, despite the reputation among normies.
+
+<br>
+
+Also a special shoutout to my IRL friends who I will not name for obvious reasons. They were really amazing and awesome.
+
+And, because IRLs are able to, yk, contact me outside of socials, the only thing you guys really need to know is the following:
+
+<ul>
+    <li>- I'm 90% sure any coding projects I'm doing with/for you guys should still be in progress.
+    <li>- You can still contact me via other methods you have ahold of, and I'll respond there.
+</ul>
+
+<br>
+
+However, good things don't usually last forever - and unfortunately, the same is happening here. At least, it's a possibility.
+
+So here's the plan until March/April:
+
+<ul>
+    <li>- Bluesky may not be actively used (as if I don't go on there actively anyways)
+    <li>- Coding progress may slow but not be entirely gone.
+    <li>- I may be less active in the usual areas.
+    <li>- I might not respond to all DMs, but will respond to most.
+    <li>- My help in servers will slow down dramatically
+<ul>
+
+<br>
+
+During March/April at some point (if I remember), I will put out another blog post, detailing progress in life, and more concrete plans, but to give a bit of an early heads up, this is the plan (for now) from that time until June/July:
+
+<ul>
+    <li>- Bluesky (and Discord possibly) may have none to little activity, despite me being "online"
+    <li>- Coding progress might stop. Git accounts will remain, but GPG keys may be revoked early.
+    <li>- DMs I respond to may slow even more.
+    <li>- I will no longer help in servers.
+</ul>
+
+<br>
+
+Once June/July hits, I'll post an update, including whether or not I'll continue being online, and any other changes that I didn't announce.
+
+<br>
+
+<a class="text-2xl font-bold">But why?</a>
+
+I hear you ask. And fair enough - I am pretty active and help in stuff and code, so it doesn't make sense right?
+
+<br>
+
+Well, the answer is due to a ton of mental pressure and scheduling.
+
+<br>
+
+To keep it short, my personal life had caused mental breakdowns towards the end of last year and this year, and in the past, having recognised that I have been driven to the point of wanting to, uh, "slash my heart" in the past due to a culmination of reasons including physical abuse, I realised that while my online life was amazing and healthy, my personal life needed some caretaking too. Specifically, I needed to ramp up on some studying (and you could probably guess, but it was maths.), so to take a bit of a break or even just a step back is the better choice than trying to balance both in its current state.
+
+<br>
+
+And yeah. That's kinda it. It has been amazing, but the time has come where I took a step back. I could be back, since coding is basically my life, and I like the online world a lot, a place where you don't get judged physically but characteristically. But I might be moving to a new account, especially since this account had some negative associations during my period of life.
+
+<br>
+<br>
+
+See you around. --KTrain
