@@ -2,8 +2,9 @@
 title: "FIRST EVER BLOG!"
 publishDate: "2024-11-24T17:18:32+1000"
 description: "This is the first (real) blog post."
-author: "KTrain5369"
+author: ktrain5369
 tags: ["astro", "blog", "test"]
+draft: false
 ---
 
 Well, it's certainly something to be here.

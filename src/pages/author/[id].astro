@@ -1,0 +1,25 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import AuthorPageLayout from '../../layouts/AuthorPageLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('authors');
+  return posts.map((post) => ({
+	params: { id: post.id },
+	props: { post },
+  }));
+}
+
+type Props = {
+  id: string;
+};
+
+const { id } = Astro.params;
+const post = await getEntry('authors', id);
+if (!post) return;
+const { Content } = await render(post);
+---
+
+<AuthorPageLayout {...post.data}>
+	<Content />
+</AuthorPageLayout>

@@ -3,7 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPostBlock from '../../components/BlogPostBlock.astro';
 import { getCollection } from 'astro:content';
 
-const blogPosts = await getCollection('blog');
+const blogPosts = await getCollection('blog', ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+});
 
 // Sort blog posts by newest publishDate first
 blogPosts.sort((a, b) => {
@@ -21,7 +23,7 @@ blogPosts.sort((a, b) => {
                 <BlogPostBlock 
                     title={post.data.title} 
                     link={`/blog/${post.id.replace('.md', '')}`}
-                    description={post.data.description} 
+                    description={post.data.description && post.data.description} 
                     publishDate={post.data.publishDate} 
                 />
             </div>

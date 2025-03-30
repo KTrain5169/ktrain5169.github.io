@@ -2,36 +2,37 @@
 title: "Preact hands-on: first thoughts"
 publishDate: "2025-02-02T21:04:37+1000"
 description: "I started using Preact; here's my thoughts."
-author: "KTrain5369"
+author: ktrain5369
 tags: ["preact", "blog", "first thoughts", "hands-on"]
+draft: false
 ---
 
 <a class="text-blue-300 hover:text-blue-500" href="https://preactjs.com">Preact</a> is a website development framework, similar to Astro & Nuxt (which I've talked about on this blog before). It's more like Nuxt in that it is a single-page application framework, meaning doesn't fully unload when you switch pages. It's an alternative to React that is smaller but still offers the same modern APIs.
 
-<br>
+<br />
 
 I normally wouldn't really care about using Preact, especially since I've already written multiple websites in Astro and they're working perfectly fine with it, so why bother learning?
 
-<br>
+<br />
 
 Well, recently I've been tasked with working on an internet radio. While I can't share specifics yet since we're not ready, I did initally start out with Astro for their landing page.
 
 The problem was that radio would obviously unload across pages, due to Astro's nature of being a multi-page application. While we did play around with the Preact integration for Astro, we ended up switching to Preact entirely as otherwise we would have to significantly rework our current Astro pages, which would mean that we might as well put the same amount of effort into fully using Preact as opposed to trying to fix jank with more jank. (We probably would've written the same amount of code if we reworked our Astro codebase anyways.)
 
-<br>
+<br />
 
 After trying to work Preact today, my first thoughts were "It's kind of weird putting HTML in TSX, then rendering it with more TSX, and then finally embedding that TSX into a HTML". It didn't really feel natural to me. But eventually I got used to it.
 
 This is also the first project I created after TailwindCSS v4 introduced a Vite plugin, which broke a couple of Astro sites when I tried to upgrade, so I really didn't know if it was gonna work. (It did, thankfully)
 
-<br>
+<br />
 
 Lastly, when I tried running the dev server (after converting my Astro pages), I was greeted with... a blank screen. I need to fix this later, but it definitely annoyed me when I opened the dev server and thought it would work, only for it to just... not.
 
-<br>
+<br />
 
 So that's my first thoughts on Preact. All the negatives of it are really just my skill issue after looking back at it, but it certainly stung during that programmer moment.
 
-<br>
+<br />
 
 See you next blog post! _heart_
