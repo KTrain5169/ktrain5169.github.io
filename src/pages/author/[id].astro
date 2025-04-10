@@ -5,21 +5,34 @@ import AuthorPageLayout from '../../layouts/AuthorPageLayout.astro';
 export async function getStaticPaths() {
   const posts = await getCollection('authors');
   return posts.map((post) => ({
-	params: { id: post.id },
-	props: { post },
+    params: { id: post.id },
+    props: { post },
   }));
 }
-
-type Props = {
-  id: string;
-};
 
 const { id } = Astro.params;
 const post = await getEntry('authors', id);
 if (!post) return;
+
+// Fetch all blog posts referenced in written_posts
+const blogs = [];
+for (const blogId of post.data.written_posts) {
+  try {
+    const blogPost = await getEntry('blog', blogId); // Fetch blog post by ID
+    if (blogPost) {
+      blogs.push({
+        id: blogPost.id, // Slug for the href
+        title: blogPost.data.title, // Title for display
+      });
+    }
+  } catch (error) {
+    console.warn(`Failed to fetch blog post with ID "${blogId}":`, error);
+  }
+}
+
 const { Content } = await render(post);
 ---
 
-<AuthorPageLayout {...post.data}>
-	<Content />
+<AuthorPageLayout {...post.data} blogs={blogs}>
+  <Content />
 </AuthorPageLayout>

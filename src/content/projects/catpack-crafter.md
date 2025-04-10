@@ -1,9 +1,6 @@
 ---
 title: "CatPack Crafter"
 tags: ["minecraft", "modding", "python", "prism-launcher"]
-description: "K"
-link: "d"
-image: "f"
 creationDate: "2025-02-07T21:00:00+1000"
 maintainer: "KTrain5369"
 download: "https://github.com/KTrain5169/CatPack-Crafter/releases"

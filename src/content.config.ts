@@ -39,6 +39,7 @@ const authorCollection = defineCollection({
     tagline: z.string().optional(),
     description: z.string().optional(),
     pfp: z.string().optional(),
+    written_posts: z.array(z.string()), // we reference these later
     socials: z.array(z.object({
       title: z.string(),
       link: z.string()
