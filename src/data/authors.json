@@ -1,11 +1,11 @@
 [
-    {
-        "id": "ktrain5369",
-        "name": "KTrain5369",
-        "nicks": ["KTrain", "KTrain5169"],
-        "description": "The owner of this site! Hi there!",
-        "pfp": "favicon.png",
-        "written_posts": ["first-blog"],
-        "socials": []
-    }
+  {
+    "id": "ktrain5369",
+    "name": "KTrain5369",
+    "nicks": ["KTrain", "KTrain5169"],
+    "description": "The owner of this site! Hi there!",
+    "pfp": "favicon.png",
+    "written_posts": ["first-blog"],
+    "socials": []
+  }
 ]

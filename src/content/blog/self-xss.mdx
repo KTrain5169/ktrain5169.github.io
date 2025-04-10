@@ -10,10 +10,13 @@ draft: false
 If you've been curious to pop open the browser console, you may have seen something like this on some sites:
 
 ![Discord's warning against self-cross-site scripting attacks](/blog-images/discord-xss.png)
+
 <br />
-![Instagram's warning against self-cross-site scripting attacks](/blog-images/instagram-xss.png)
+![Instagram's warning against self-cross-site scripting
+attacks](/blog-images/instagram-xss.png)
 <br />
-![Roblox's warning against self-cross-site scripting attacks](/blog-images/roblox-xss.png)
+![Roblox's warning against self-cross-site scripting
+attacks](/blog-images/roblox-xss.png)
 
 _(Note to users of screenreaders: The rest of this post will refer to self-cross-site scripting attacks as self-XSS attacks.)_
 
@@ -61,15 +64,19 @@ Basically, just like every EXE you have ever downloaded, you should always see i
 Here's the usual flow of a self-XSS attack:
 
 <ul>
-    <li>
-        - The attacker grabs user attention by advertising the code as doing something not usually possible (e.g. "Unlock a secret feature by running this code!" or "Hack someone else's account using this!")
-    </li>
-    <li>
-        - The user sees it, then copies it and opens the browser console and pastes it in.
-    </li>
-    <li>
-        - The snippet of code is executed, which can often range in functionality but will almost *always* result in the account token being lost.
-    </li>
+  <li>
+    - The attacker grabs user attention by advertising the code as doing
+    something not usually possible (e.g. "Unlock a secret feature by running
+    this code!" or "Hack someone else's account using this!")
+  </li>
+  <li>
+    - The user sees it, then copies it and opens the browser console and pastes
+    it in.
+  </li>
+  <li>
+    - The snippet of code is executed, which can often range in functionality
+    but will almost *always* result in the account token being lost.
+  </li>
 </ul>
 
 <br />

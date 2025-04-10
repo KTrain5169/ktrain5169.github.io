@@ -1,22 +1,22 @@
 [
-    {
-      "id": "example-group",
-      "name": "Example Group",
-      "pfp": "example.png",
-      "tagline": "An example group",
-      "description": "This is an example group description.",
-      "projects": [
-        {
-          "name": "Example Project",
-          "description": "An example project description.",
-          "link": "https://example.com"
-        }
-      ],
-      "socials": [
-        {
-          "name": "Twitter",
-          "link": "https://twitter.com/example"
-        }
-      ]
-    }
-  ]
+  {
+    "id": "example-group",
+    "name": "Example Group",
+    "pfp": "example.png",
+    "tagline": "An example group",
+    "description": "This is an example group description.",
+    "projects": [
+      {
+        "name": "Example Project",
+        "description": "An example project description.",
+        "link": "https://example.com"
+      }
+    ],
+    "socials": [
+      {
+        "name": "Twitter",
+        "link": "https://twitter.com/example"
+      }
+    ]
+  }
+]
