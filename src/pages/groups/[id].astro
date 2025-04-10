@@ -1,0 +1,22 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import GroupPageLayout from '../../layouts/GroupPageLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('groups');
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { id } = Astro.params;
+const post = await getEntry('groups', id);
+if (!post) return;
+
+const { Content } = await render(post);
+---
+
+<GroupPageLayout {...post.data}>
+  <Content />
+</GroupPageLayout>

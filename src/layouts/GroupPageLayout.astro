@@ -1,0 +1,69 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import MetaTag from "../components/MetaTag.astro";
+import "../styles/global.css";
+
+const { name, tagline, description, pfp, projects, socials } = Astro.props;
+const meta = {
+    title: `${name} (Group) | KTrain5369`,
+    description: "A group that KTrain works with.",
+    tags: `blog, author`
+};
+interface socialProps {
+    title: string;
+    link: string;
+}
+interface projectProps {
+    name: string;
+    description: string;
+    link: string;
+}
+const fullImageLink = pfp && `/author-images/${pfp}`;
+---
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <MetaTag {...meta} />
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description}>
+    <link rel="icon" href="/favicon.png" type="image/png">
+</head>
+<body class="h-full m-0 flex flex-col bg-gray-900 text-white">
+    <Header />
+    <main class="flex-1 flex flex-col items-center justify-center p-4 sm:p-8 lg:p-12">
+        <div class="bg-gray-700 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 max-w-full sm:max-w-lg lg:max-w-3xl w-full">
+            {pfp && <img src={fullImageLink} alt={`${name}'s image'`} class="w-full h-auto rounded-t-lg mb-4 sm:mb-5" />}
+            <h1 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5">{name}</h1>
+            {tagline && <p class="text-xs sm:text-sm text-gray-400 mb-4 sm:mb-5">{tagline}</p>}
+            {description && <a class="text-md mb-4 sm:mb-5">{description}</a>}
+            <hr class="my-4 border-gray-300" />
+            <p class="text-md mb-4 sm:mb-5">Written posts:</p>
+            <ul class="list-disc list-inside text-blue-400">
+                {projects.map((project: projectProps) => (
+                    <li>
+                        <a class="hover:text-blue-500" href={project.link}>{project.name}</a>
+                        <a>{project.description}</a>
+                    </li>
+                ))}
+            </ul>
+            {socials && (
+                <>
+                    <hr class="my-4 border-gray-300" />
+                    <p class="text-md mb-4 sm:mb-5">Socials:</p>
+                    <ul class="list-disc list-inside">
+                        {socials.map((socialLink: socialProps) => (
+                            <li>
+                                <a class="text-blue-400 hover:text-blue-500" href={socialLink.link}>{socialLink.title}</a>
+                            </li>
+                        ))}
+                    </ul>
+                </>
+            )}
+        </div>
+    </main>
+    <Footer />
+</body>
+</html>

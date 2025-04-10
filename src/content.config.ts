@@ -1,9 +1,10 @@
 // 1. Import utilities from `astro:content`
 import { z, defineCollection, reference } from "astro:content";
 import { glob, file } from "astro/loaders"; 
+import { optional } from "astro:schema";
 // 2. Define your collection(s)
 const blogCollection = defineCollection({
-  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog"}),
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),
   schema: z.object({
     title: z.string(),
     tags: z.array(z.string()).optional(),
@@ -15,7 +16,7 @@ const blogCollection = defineCollection({
 });
 
 const projectCollection = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/projects"}),
+  loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
   schema: z.object({
     title: z.string(),
     tags: z.array(z.string()).optional(),
@@ -45,11 +46,41 @@ const authorCollection = defineCollection({
       link: z.string()
     })).optional(),
   })
+});
+
+const groupCollection = defineCollection({
+  loader: file("src/data/groups.json"),
+  schema: z.object({
+    id: z.string(),
+    name: z.string(),
+    pfp: z.string().optional(),
+    tagline: z.string(),
+    description: z.string(),
+    projects: z.array(z.object({
+      name: z.string(),
+      description: z.string(),
+      link: z.string()
+    })).optional(),
+    socials: z.array(z.object({
+      name: z.string(),
+      link: z.string()
+    }))
+  })
 })
+
+const ideaCollection = defineCollection({
+  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/ideas" }),
+  schema: z.object({
+    name: z.string()
+  })
+})
+
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
   blog: blogCollection,
   projects: projectCollection,
   authors: authorCollection,
+  groups: groupCollection,
+  ideas: ideaCollection
 };
