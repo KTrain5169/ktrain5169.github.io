@@ -70,10 +70,12 @@ const groupCollection = defineCollection({
       )
       .optional(),
     socials: z.array(
-      z.object({
-        name: z.string(),
-        link: z.string(),
-      }).optional(),
+      z
+        .object({
+          name: z.string(),
+          link: z.string(),
+        })
+        .optional(),
     ),
   }),
 });
