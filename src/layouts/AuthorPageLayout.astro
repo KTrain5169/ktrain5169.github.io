@@ -45,10 +45,10 @@ const fullImageLink = pfp && `/author-images/${pfp}`;
             {description && <a class="text-md mb-4 sm:mb-5">{description}</a>}
             <hr class="my-4 border-gray-300" />
             <p class="text-md mb-4 sm:mb-5">Written posts:</p>
-            <ul class="list-disc list-inside text-blue-400">
+            <ul class="list-disc list-inside">
                 {blogs.map((blog: blogProps) => (
                     <li>
-                        <a class="hover:text-blue-500" href={`/blog/${blog.id}`}>{blog.title}</a>
+                        <a class="text-blue-400 hover:text-blue-500 hover:underline" href={`/blog/${blog.id}`}>{blog.title}</a>
                     </li>
                 ))}
             </ul>
@@ -59,7 +59,7 @@ const fullImageLink = pfp && `/author-images/${pfp}`;
                     <ul class="list-disc list-inside">
                         {socials.map((socialLink: socialProps) => (
                             <li>
-                                <a class="text-blue-400 hover:text-blue-500" href={socialLink.link}>{socialLink.title}</a>
+                                <a class="text-blue-400 hover:text-blue-500 hover:underline" href={socialLink.link}>{socialLink.title}</a>
                             </li>
                         ))}
                     </ul>

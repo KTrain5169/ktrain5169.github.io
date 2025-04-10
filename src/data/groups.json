@@ -1,21 +1,29 @@
 [
   {
-    "id": "example-group",
-    "name": "Example Group",
-    "pfp": "example.png",
-    "tagline": "An example group",
-    "description": "This is an example group description.",
+    "id": "usevital",
+    "name": "UseVital (Vital organization)",
+    "pfp": "vital512.png",
+    "description": "Organization for Vital-related projects.",
     "projects": [
       {
-        "name": "Example Project",
-        "description": "An example project description.",
-        "link": "https://example.com"
+        "name": "Vital",
+        "description": "A modpack to replace Essential.",
+        "link": "https://modrinth.com/modpack/vital"
+      },
+      {
+        "name": "NotEssential",
+        "description": "A site about why you shouldn't use Essential.",
+        "link": "/projects/notessential"
       }
     ],
     "socials": [
       {
-        "name": "Twitter",
-        "link": "https://twitter.com/example"
+        "name": "GitHub",
+        "link": "https://github.com/usevital"
+      },
+      {
+        "name": "Modrinth",
+        "link": "https://modrinth.com/organization/vital"
       }
     ]
   }

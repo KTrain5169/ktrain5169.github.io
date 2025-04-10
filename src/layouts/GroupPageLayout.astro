@@ -11,7 +11,7 @@ const meta = {
     tags: `blog, author`
 };
 interface socialProps {
-    title: string;
+    name: string;
     link: string;
 }
 interface projectProps {
@@ -19,7 +19,7 @@ interface projectProps {
     description: string;
     link: string;
 }
-const fullImageLink = pfp && `/author-images/${pfp}`;
+const fullImageLink = pfp && `/group-images/${pfp}`;
 ---
 <!DOCTYPE html>
 <html lang="en" class="h-full">
@@ -41,11 +41,10 @@ const fullImageLink = pfp && `/author-images/${pfp}`;
             {description && <a class="text-md mb-4 sm:mb-5">{description}</a>}
             <hr class="my-4 border-gray-300" />
             <p class="text-md mb-4 sm:mb-5">Written posts:</p>
-            <ul class="list-disc list-inside text-blue-400">
+            <ul class="list-disc list-inside">
                 {projects.map((project: projectProps) => (
                     <li>
-                        <a class="hover:text-blue-500" href={project.link}>{project.name}</a>
-                        <a>{project.description}</a>
+                        <a class="text-blue-400 hover:text-blue-500 hover:underline" href={project.link}>{project.name}</a> - {project.description}
                     </li>
                 ))}
             </ul>
@@ -56,7 +55,7 @@ const fullImageLink = pfp && `/author-images/${pfp}`;
                     <ul class="list-disc list-inside">
                         {socials.map((socialLink: socialProps) => (
                             <li>
-                                <a class="text-blue-400 hover:text-blue-500" href={socialLink.link}>{socialLink.title}</a>
+                                <a class="text-blue-400 hover:text-blue-500 hover:underline" href={socialLink.link}>{socialLink.name}</a>
                             </li>
                         ))}
                     </ul>

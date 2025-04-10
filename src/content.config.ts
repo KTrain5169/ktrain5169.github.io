@@ -58,13 +58,13 @@ const groupCollection = defineCollection({
     id: z.string(),
     name: z.string(),
     pfp: z.string().optional(),
-    tagline: z.string(),
-    description: z.string(),
+    tagline: z.string().optional(),
+    description: z.string().optional(),
     projects: z
       .array(
         z.object({
           name: z.string(),
-          description: z.string(),
+          description: z.string().optional(),
           link: z.string(),
         }),
       )
@@ -73,7 +73,7 @@ const groupCollection = defineCollection({
       z.object({
         name: z.string(),
         link: z.string(),
-      }),
+      }).optional(),
     ),
   }),
 });
