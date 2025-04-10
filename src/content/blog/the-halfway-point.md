@@ -13,4 +13,4 @@ As a side note, I am working on 3 pages about ideas I have. Mostly because if I 
 
 Thanks for your support (if you gave me any)!
 
-Also, I originally planned this to go up last month as of writing this but due to complications in upgrading to Astro's new Content Collections API, I had to delay until now. It was.. an interesting proces, to say the least.
+Also, I originally planned this to go up last month as of writing this but due to complications in upgrading to Astro's new Content Collections API, I had to delay until now. It was.. an interesting proces, to say the least. At least I took the time to also add some new stuff to the site as well 🤷
