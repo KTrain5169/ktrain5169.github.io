@@ -1,9 +1,0 @@
----
-const { title, titleColour = "black", subtext = "", subtextColour = "black", link = "", linkText = "", linkTextColour = "blue-600", linkTextHoverColour = "blue-500", bgColour = "red-500" } = Astro.props;
----
-
-<div class={`bg-${bgColour} text-center p-3 mb-5`}>
-    <p class={`text-${titleColour} text-xl`}>{title}</p>
-    <p class={`text-${subtextColour} text-lg`}>{subtext}</p>
-    <a href={link} class={`text-${linkTextColour} hover:underline hover:text-${linkTextHoverColour}`}>{linkText}</a>
-</div>
