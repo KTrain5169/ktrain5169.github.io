@@ -7,7 +7,7 @@ const { title, description, tags } = Astro.props;
 const meta = {
     title: `${title} | KTrain5369`,
     description: `${description}`,
-    tags: `${tags}`
+    tags: tags ? tags : ""
 }
 ---
 <!DOCTYPE html>

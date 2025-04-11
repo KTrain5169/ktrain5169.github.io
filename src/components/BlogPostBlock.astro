@@ -1,6 +1,7 @@
 ---
-const { title, link, description, publishDate } = Astro.props;
+const { title, link, description = "", publishDate = undefined } = Astro.props;
 
+if (!publishDate) return;
 const formattedDate = new Date(publishDate).toLocaleString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -17,6 +18,6 @@ const formattedDate = new Date(publishDate).toLocaleString('en-US', {
             <h2 class="text-xl font-bold mb-2">{title}</h2>
             <p class="text-sm text-gray-400 mb-2">{description}</p>
         </div>
-        <p class="text-xs text-gray-500 sm:ml-4 sm:mt-0 mt-2">{formattedDate}</p>
+        <p class="text-xs text-gray-500 sm:ml-4 sm:mt-0 mt-2">{formattedDate ? formattedDate : ""}</p>
     </div>
 </a>

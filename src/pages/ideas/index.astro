@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogPostBlock from "../../components/BlogPostBlock.astro";
+import { getCollection } from "astro:content";
+
+const ideas = await getCollection('ideas', ({ data }) => {
+    return import.meta.env.PROD === true ? data.WIP !== true : true;
+});
+
+/// sort by alphabetical order
+ideas.sort((a, b) => {
+    const titleA = a.data.title.toLowerCase();
+    const titleB = b.data.title.toLowerCase();
+    return titleA.localeCompare(titleB);
+});
+---
+
+<BaseLayout title="Ideas" description="Random idea dumps" tags="ideas">
+    <h1 class="text-center text-3xl font-bold my-5">My idea dump</h1>
+    <div class="flex flex-col flex-wrap justify-center items-center min-h-full gap-2 lg:gap-5 p-5">
+        {ideas.map(idea => (
+            <div class="bg-gray-700 rounded-lg shadow-lg p-5 mb-2 lg:mb-5">
+                <BlogPostBlock 
+                    title={idea.data.title}
+                    link={`/blog/${idea.id.replace('.md', '')}`}
+                />
+            </div>
+        ))}
+    </div>
+</BaseLayout>

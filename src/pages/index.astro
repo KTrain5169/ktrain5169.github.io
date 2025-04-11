@@ -2,16 +2,21 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialLink from '../components/SocialLink.astro';
 import FeaturedContent from '../components/FeaturedContent.astro';
+import AnnounceBanner from '../components/AnnounceBanner.astro';
+
+const announcement = {
+    title: "At around June/July, some or all of these accounts will be inactive.",
+    link: "/blog/next-steps",
+    linkText: "Read more about that here."
+}
 ---
 <BaseLayout title="Home" description="Homepage for KTrain5369's website" tags="webpage">
     <main class="flex-1 flex flex-col items-center justify-center">
         <h1 class="font-bold text-center my-5">KTrain5369</h1>
         
+
         <!-- Announcement Banner -->
-        <div class="bg-red-500 text-black text-center p-3 mb-5">
-            <p>At around June/July, some or all of these accounts will be inactive.</p>
-            <a href="/blog/next-steps" class="text-blue-600 hover:underline hover:text-blue-500">Read more about that here.</a>
-        </div>
+        <AnnounceBanner {...announcement} />
         
         <div class="flex lg:flex-row flex-col justify-center gap-3.5 mb-5">
             <button class="block mx-auto px-5 py-2.5 bg-black text-white text-center border-none cursor-pointer">

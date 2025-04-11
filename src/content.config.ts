@@ -84,6 +84,8 @@ const ideaCollection = defineCollection({
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/ideas" }),
   schema: z.object({
     title: z.string(),
+    tags: z.array(z.string()).optional(),
+    WIP: z.boolean()
   }),
 });
 

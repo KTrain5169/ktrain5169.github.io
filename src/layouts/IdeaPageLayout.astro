@@ -1,17 +1,23 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import MetaTag from "../components/MetaTag.astro";
-import "../styles/global.css";
+import BaseLayout from "./BaseLayout.astro";
 
-const { title } = Astro.props;
+const { title, tags } = Astro.props;
 const meta = {
-    title: `${title} (Blog) | KTrain5369`,
+    title: `${title} (Idea)`,
     description: `An idea by KTrain5369`,
-    tags: `ideas`
+    tags: `${tags}, ideas`
 };
 ---
-<!DOCTYPE html>
+
+<BaseLayout {...meta}>
+    <div class="bg-gray-700 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 max-w-full sm:max-w-lg lg:max-w-3xl w-full">
+        <h1 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5">{title}</h1>
+        <hr class="my-4 border-gray-300" />
+        <slot />
+    </div>
+</BaseLayout>
+
+{/*<!DOCTYPE html>
 <html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +29,7 @@ const meta = {
 </head>
 <body class="h-full m-0 flex flex-col bg-gray-900 text-white">
     <Header />
-    <main class="flex-1 flex flex-col items-center justify-center p-4 sm:p-8 lg:p-12">
+    <main class="flex-1 flex flex-col items-center justify-center p-4 sm:p-8 lg:p-12"><!-- code is basically copied up to here -->
         <div class="bg-gray-700 rounded-lg shadow-lg p-4 sm:p-6 lg:p-8 max-w-full sm:max-w-lg lg:max-w-3xl w-full">
             <h1 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-5">{title}</h1>
             <hr class="my-4 border-gray-300" />
@@ -32,4 +38,4 @@ const meta = {
     </main>
     <Footer />
 </body>
-</html>
+</html>*/}
