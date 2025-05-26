@@ -85,7 +85,7 @@ const ideaCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     tags: z.array(z.string()).optional(),
-    WIP: z.boolean()
+    WIP: z.boolean(),
   }),
 });
 
