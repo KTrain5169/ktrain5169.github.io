@@ -24,8 +24,8 @@ importers:
         specifier: 0.487.0
         version: 0.487.0(astro@5.6.1(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1))
       simple-icons-astro:
-        specifier: 14.12.1
-        version: 14.12.1(astro@5.6.1(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1))
+        specifier: 14.15.0
+        version: 14.15.0(astro@5.6.1(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1))
       tailwindcss:
         specifier: 4.1.3
         version: 4.1.3
@@ -1679,8 +1679,8 @@ packages:
   shiki@3.2.2:
     resolution: {integrity: sha512-0qWBkM2t/0NXPRcVgtLhtHv6Ak3Q5yI4K/ggMqcgLRKm4+pCs3namgZlhlat/7u2CuqNtlShNs9lENOG6n7UaQ==}
 
-  simple-icons-astro@14.12.1:
-    resolution: {integrity: sha512-ksFuuT6/SXmBNUR+SfWNTp/ysjbNYri3vy638gVXpqdGB3wo2rCyAev4LUwd0RvVNDbN0+s/e6mZpG+mUIh7aQ==}
+  simple-icons-astro@14.15.0:
+    resolution: {integrity: sha512-rfc3sgjoP2VhDpq4B+5HHi+QAnftpfjzcbwdu/sfgWE9R3fMYFusobC69fYkLVVM0j74ko2w1qKQiYzfMH0k7A==}
     peerDependencies:
       astro: '>=2.7.1'
 
@@ -4184,7 +4184,7 @@ snapshots:
       '@shikijs/vscode-textmate': 10.0.2
       '@types/hast': 3.0.4
 
-  simple-icons-astro@14.12.1(astro@5.6.1(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1)):
+  simple-icons-astro@14.15.0(astro@5.6.1(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1)):
     dependencies:
       astro: 5.6.1(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.39.0)(typescript@5.8.3)(yaml@2.7.1)
 
