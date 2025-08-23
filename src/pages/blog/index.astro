@@ -9,8 +9,8 @@ const blogPosts = await getCollection('blog', ({ data }) => {
 
 // Sort blog posts by newest publishDate first
 blogPosts.sort((a, b) => {
-    const dateA = new Date(a.data.publishDate).getTime();
-    const dateB = new Date(b.data.publishDate).getTime();
+    const dateA = new Date(a.data.publishDate ?? 0).getTime();
+    const dateB = new Date(b.data.publishDate ?? 0).getTime();
     return dateB - dateA; // Sort in descending order
 });
 ---

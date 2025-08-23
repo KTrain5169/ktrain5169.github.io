@@ -5,8 +5,8 @@ publishDate: 2025-08-23T20:40:00+1000
 draft: false
 ---
 
-*For those who for some reason want to know why I didn't push a 6-month progress update: I had more priorities and forgot. Sorry.*
-*TL;DR of that entire month period may be coming soon...*
+_For those who for some reason want to know why I didn't push a 6-month progress update: I had more priorities and forgot. Sorry._
+_TL;DR of that entire month period may be coming soon..._
 
 So, a while ago, Cloudflare announced that they will begin combining Cloudflare Pages into their Workers products with Workers Static Assets, a new binding available to all Workers that allows static assets to be hosted on a Worker and served, free of charge, like the Pages product.
 I did a little testing in private with this new thing and I think I should write down my opinions, even though I am a nobody on the Internet.
@@ -21,7 +21,7 @@ It was built upon Cloudflare, and to paraphrase Cloudflare in a blog article I c
 However, at the time of release, Pages was frontend-only. If you wanted to have a backend, you'd need to use Cloudflare Workers or other solutions to fill that gap. This meant that you had to chain multiple things together to get some form of interactive web app, which introduced moving parts.
 I wasn't making web apps back then, but I know for damn sure I would've hated it so much.
 Eventually, though, thing changed: [Pages became full-stack](https://blog.cloudflare.com/cloudflare-pages-goes-full-stack/). This was huge, as it meant that you could deploy your full-stack app on the same platform together.
-It was just a subset of what Workers *could* do, but what it did accomplish was certainly enough for tons of apps, especially as bindings were now applicable to Pages as well.
+It was just a subset of what Workers _could_ do, but what it did accomplish was certainly enough for tons of apps, especially as bindings were now applicable to Pages as well.
 
 However, and this is my thoughts, there came a problem: If Pages only had a subset of Workers, the people who wanted to use a features in Workers are still missing out. I know personally that Durable Objects was a sore point for me.
 And if they ported the entire Workers runtime over, who would use Workers anymore if they could use "Workers+"?
@@ -35,7 +35,7 @@ Well, I asked my friend [WorldWidePixel](https://worldwidepixel.ca/) about it la
 
 But, I wanted to at least give it a try, and give my own thoughts from there.
 
-So, after testing this privately, these are some of the pain points I wanted to *add on top of that*:
+So, after testing this privately, these are some of the pain points I wanted to _add on top of that_:
 
 ## Workers doesn't act the same as Pages Functions for routes
 
@@ -44,8 +44,8 @@ You place your JS/TS files in that directory, export a handler function, and boo
 Personally, what I really liked about it is that you don't have to shove every single function into a single file if you wanted it to have different routes.
 
 That is not the case with Workers.
-Workers only allows you to specify *one* entrypoint. This means that this one entrypoint has to handle routing logic for **every single route**.
-This is a *big* nuisance as it means you have to manually handle path logic yourself, whereas previously Pages Functions would map each function based on their directory, making it *far* easier.
+Workers only allows you to specify _one_ entrypoint. This means that this one entrypoint has to handle routing logic for **every single route**.
+This is a _big_ nuisance as it means you have to manually handle path logic yourself, whereas previously Pages Functions would map each function based on their directory, making it _far_ easier.
 If they could have something like this for Workers, even if it's a toggle, this would be an absolute blessing to have.
 
 ## Cloudflare Workers builds are much worse in build time
@@ -56,7 +56,7 @@ Pages is built using a Google Cloud VM instance (or whatever you call it). This 
 
 Workers is built using Workers Build, which, as you may have guessed, runs using Workers and Cloudflare's newly released Containers offering. (It wasn't an offering when Workers Build was introduced, though)
 
-This meant that Workers builds had more unstable build times and according to someone on the Cloudflare Discord, was *much* higher than Pages build times anyways.
+This meant that Workers builds had more unstable build times and according to someone on the Cloudflare Discord, was _much_ higher than Pages build times anyways.
 
 Getting rid of this inconsistency and instability would get more people assured that their builds would be completed in a timely manner.
 I should note, though, that they have been improving error tracking for Workers, which whilst it doesn't decrease build times which was what I was complaining about, does help identify errors, which isn't present in Pages.
@@ -68,16 +68,16 @@ Cloudflare also introduced the [Cloudflare Vite plugin](https://developers.cloud
 This aims to improve developer experience by utilising Vite's experimental Environment API to run your app inside the workerd runtime (which is the runtime used by Wrangler).
 it's a very neat concept, and I am very much for the idea.
 
-However, right now, the *only* full-stack framework supported is React Router v7, which is very limiting.
+However, right now, the _only_ full-stack framework supported is React Router v7, which is very limiting.
 They do mention that more frameworks are coming soon, but I'm sure that most of you, and myself, use something other than React Router.
-So having support for other frameworks would drive adoption of the plugin *and* the all-in-Workers solution much more.
+So having support for other frameworks would drive adoption of the plugin _and_ the all-in-Workers solution much more.
 
 Additionally, it also misses a pretty important feature from Wrangler, which is being able to work with remote bindings. Again, support is coming later, so I can only hope.
 
 I really want the Cloudflare Vite plugin to be useful across much more frameworks, as not only would it bring flexibility in what framework I choose, but it also allows me to utililse Vite's HMR so that I avoid having to rebuild every time my site changes just so I can preview with Wrangler.
 Although, it would be interesting when some frammeworks like SvelteKit and Astro, which already have a Cloudflare adapter, would handle it. I guess we'll have to wait and see.
 
-## Workers doesn't *always* deploy a test version
+## Workers doesn't _always_ deploy a test version
 
 When you opened a pull request on a Pages project, Cloudflare would deploy your project onto a separate subdomain (called Preview URLs), no matter what.
 This is really convenient as it'd allow for changes to be immediately visible without requiring a dev server. I love it, and it's really good.
@@ -91,11 +91,11 @@ To their credit, Workers also doesn't the same, but with limitations. According 
 
 The most relevant in my use case is the 1st and 4th item. The 2nd item is also annoying I'd imagine (I don't use WfP), but it's stated that it's temporary at least. The 3rd item is something that bugs me a bit but Pages doesn't have that either so it's not a downgrade.
 
-But the 1st hits me *really* hard as I do use Durable Objects a lot. And yea, I get that DOs are a bit complex, but at the very least, if I'm using Static Assets, I *should* be able to have a preview URL up if I *only* modify my static assets paths.
+But the 1st hits me _really_ hard as I do use Durable Objects a lot. And yea, I get that DOs are a bit complex, but at the very least, if I'm using Static Assets, I _should_ be able to have a preview URL up if I _only_ modify my static assets paths.
 They could also choose to spin up another lightweight DO, but that could probably incur costs so I'm leaning on the "not happening" side.
 
-And the 4th one hits me hard too. I value observability quite a lot, not to the point I'm obsessed about it, but enough to actually want to be able to view logs, errors, etc... when things *do* go wrong.
-Not having logging for previews *especially* is a problem as I am more than likely going to *want* to see logs than in production as, y'know, it's a preview environment. Things are expected to break, and I need those logs to be able to trace the problem down.
+And the 4th one hits me hard too. I value observability quite a lot, not to the point I'm obsessed about it, but enough to actually want to be able to view logs, errors, etc... when things _do_ go wrong.
+Not having logging for previews _especially_ is a problem as I am more than likely going to _want_ to see logs than in production as, y'know, it's a preview environment. Things are expected to break, and I need those logs to be able to trace the problem down.
 
 The Durable Object catch might even be the reason why it's not available as a direct binding option in Pages, but combining Pages into Workers is the worst idea.
 
