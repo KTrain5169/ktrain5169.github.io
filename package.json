@@ -20,7 +20,7 @@
     "@tailwindcss/vite": "4.1.12",
     "astro": "5.13.7",
     "lucide-astro": "0.487.0",
-    "simple-icons-astro": "14.12.1",
+    "simple-icons-astro": "15.16.0",
     "tailwindcss": "4.1.8",
     "typescript": "5.8.3"
   },
