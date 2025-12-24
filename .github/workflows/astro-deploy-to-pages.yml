@@ -39,7 +39,7 @@ jobs:
           echo "commit_msg=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
       - name: GitHub JS scripting
         id: github-script
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const commitMsg = process.env.COMMIT_HEADER;
