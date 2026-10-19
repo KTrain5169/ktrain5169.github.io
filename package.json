@@ -1,5 +1,5 @@
 {
-  "name": "ktrain5369-website",
+  "name": "@ktrain5369/website",
   "private": true,
   "type": "module",
   "version": "0.0.1",
@@ -12,27 +12,26 @@
     "astro": "astro",
     "check": "astro check && prettier --check",
     "format": "prettier --write",
-    "prepare": "astro sync"
+    "prepare": "astro sync",
+    "generate-types": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.4",
-    "@astrojs/mdx": "4.3.5",
-    "@tailwindcss/vite": "4.1.12",
-    "astro": "5.13.7",
-    "lucide-astro": "0.487.0",
-    "simple-icons-astro": "14.12.1",
-    "tailwindcss": "4.1.8",
-    "typescript": "5.8.3"
+    "@astrojs/check": "0.9.10",
+    "@astrojs/cloudflare": "^14.4.0",
+    "@astrojs/mdx": "8.1.0",
+    "@lucide/astro": "^1.59.0",
+    "@tailwindcss/vite": "4.3.3",
+    "astro": "7.4.0",
+    "simple-icons-astro": "16.1.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2",
+    "wrangler": "^4.151.2",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "prettier": "3.5.3",
-    "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "0.6.14"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild",
-      "sharp"
-    ]
+    "@types/node": "^26.6.5",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.1",
+    "prettier-plugin-tailwindcss": "0.8.1"
   }
 }

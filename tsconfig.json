@@ -1,21 +1,24 @@
 {
   "compilerOptions": {
-    "target": "es6", // Specify ECMAScript target version
-    "module": "NodeNext", // Specify module code generation
-    "strict": true, // Enable all strict type-checking options
-    "esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules
-    "skipLibCheck": true, // Skip type checking of declaration files
-    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file
-    "allowImportingTsExtensions": true, // Allow importing TypeScript files with .ts extension
+    "target": "es6",
+    "module": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true,
     "noEmit": true,
-    "types": ["astro"],
+    "types": [
+      "astro"
+    ],
     "moduleResolution": "nodenext"
   },
   "include": [
-    "src/**/*" // Include all files in the src directory
+    "src/**/*",
+    "./worker-configuration.d.ts"
   ],
   "exclude": [
-    "node_modules", // Exclude node_modules directory
-    "**/*.spec.ts" // Exclude test files
+    "node_modules",
+    "**/*.spec.ts"
   ]
 }
