@@ -5,15 +5,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
     "preview": "astro preview",
-    "build-dev": "astro build && astro preview",
-    "astro": "astro",
-    "check": "astro check && prettier --check",
-    "format": "prettier --write",
-    "prepare": "astro sync",
-    "generate-types": "wrangler types"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "0.9.10",
@@ -21,18 +14,18 @@
     "@astrojs/mdx": "8.1.0",
     "@lucide/astro": "^1.59.0",
     "@tailwindcss/vite": "4.3.3",
+    "@typescript/7": "npm:typescript@^7.0.2",
     "astro": "7.4.0",
     "simple-icons-astro": "16.1.0",
     "tailwindcss": "4.3.3",
-    "@typescript/7": "npm:typescript@^7.0.2",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
     "wrangler": "^4.151.2",
     "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",
-    "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.1",
-    "prettier-plugin-tailwindcss": "0.8.1"
+    "prettier-plugin-tailwindcss": "0.8.1",
+    "vite-plus": "catalog:"
   }
 }

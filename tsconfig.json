@@ -1,16 +1,15 @@
 {
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "target": "es6",
-    "module": "preserve",
-    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
-    "types": ["astro"],
-    "moduleResolution": "bundler"
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "types": ["./.astro/types.d.ts"]
   },
-  "include": ["src/**/*", "./worker-configuration.d.ts"],
+  "include": ["src/**/*", "./worker-configuration.d.ts", ".astro/types.d.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

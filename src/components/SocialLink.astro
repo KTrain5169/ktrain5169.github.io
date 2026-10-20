@@ -1,9 +1,9 @@
 ---
-const { platform, url, iconName, iconType, color = 'white' } = Astro.props;
+const { platform, url, iconName, color = 'white' } = Astro.props;
 import Icon from './Icon.astro';
 ---
 
 <a href={url} class="flex items-center gap-2 no-underline">
-  <Icon icon={iconName} iconType={iconType} size={24} color={color} />
+  <Icon icon={iconName} size={24} color={color} />
   <span>{platform}</span>
 </a>
