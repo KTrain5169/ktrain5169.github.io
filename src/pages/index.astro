@@ -1,64 +1,117 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import SocialLink from '../components/SocialLink.astro';
-import FeaturedContent from '../components/FeaturedContent.astro';
----
-<BaseLayout title="Home" description="Homepage for KTrain5369's website" tags="webpage">
-    <main class="flex-1 flex flex-col items-center justify-center">
-        <h1 class="font-bold text-center my-5">KTrain5369</h1>
-        
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SocialLink from "../components/SocialLink.astro";
+import FeaturedContent from "../components/FeaturedContent.astro";
 
-        <!-- Announcement Banner
+import Github from 'simple-icons-astro/Github'
+import Gitlab from 'simple-icons-astro/Gitlab'
+import Bluesky from 'simple-icons-astro/Bluesky'
+import Discord from 'simple-icons-astro/Discord'
+import Twitch from 'simple-icons-astro/Twitch'
+import Youtube from 'simple-icons-astro/Youtube'
+import Astro from 'simple-icons-astro/Astro'
+import Wikipedia from 'simple-icons-astro/Wikipedia'
+---
+
+<BaseLayout
+  title="Home"
+  description="Homepage for KTrain5369's website"
+  tags="webpage"
+>
+  <main class="flex-1 flex flex-col items-center justify-center">
+    <h1 class="font-bold text-center my-5">KTrain5369</h1>
+
+    <!-- Announcement Banner
         <div class="bg-red-500 text-black text-center p-3 mb-5">
             <p>At around June/July, some or all of these accounts will be inactive.</p>
             <a href="/blog/next-steps" class="text-blue-600 hover:underline hover:text-blue-500">Read more about that here.</a>
         </div>-->
-        
-        <div class="flex lg:flex-row flex-col justify-center gap-3.5 mb-5">
-            <button class="block mx-auto px-5 py-2.5 bg-black text-white text-center border-none cursor-pointer">
-                <SocialLink platform="GitHub" iconName='github' url="https://github.com/KTrain5169/" />
-            </button>
-            <button class="block mx-auto px-5 py-2.5 bg-orange-700 text-white text-center border-none cursor-pointer">
-                <SocialLink platform="GitLab" iconName='gitlab' url="https://gitlab.com/KTrain5169" />
-            </button>
-            <button class="block mx-auto px-5 py-2.5 bg-blue-500 text-white text-center border-none cursor-pointer">
-                <SocialLink platform="Bluesky" iconName='bluesky' url="https://bsky.app/profile/ktrain5369.me/" />
-            </button>
-            <button class="block mx-auto px-5 py-2.5 bg-indigo-700 text-white text-center border-none cursor-pointer">
-                <SocialLink platform="Discord" iconName='discord' url="https://discord.gg/G6YvWhctjk" />
-            </button>
-            <button class="block mx-auto px-5 py-2.5 bg-purple-700 text-white text-center border-none cursor-pointer">
-                <SocialLink platform="Twitch" iconName='twitch' url="https://www.twitch.tv/ktrain5369" />
-            </button>
-            <button class="block mx-auto px-5 py-2.5 bg-red-700 text-white text-center border-none cursor-pointer">
-                <SocialLink platform="YouTube" iconName='youtube' url="https://www.youtube.com/@KTrain5369" />
-            </button>
-        </div>
-        <br>
-        <div class="flex lg:flex-row flex-col justify-center gap-3.5 mb-5">
-            <button class="block mx-auto px-5 py-2.5 bg-gray-500 text-white text-center border-none cursor-pointer">
-                <SocialLink platform="Website (KTools2202)" iconName="astro" url="https://ktools2202.github.io/" />
-            </button>
-            <button class="block mx-auto px-5 py-2.5 bg-black text-white text-center border-none cursor-pointer">
-                <SocialLink platform="GitHub (KTools2202)" iconName='github' url="https://github.com/KTools2202/" />
-            </button>
-            <button class="block mx-auto px-5 py-2.5 bg-orange-700 text-white text-center border-none cursor-pointer">
-                <SocialLink platform="GitLab (KTools2202)" iconName='gitlab' url="https://gitlab.com/KTools2202/" />
-            </button>
-        </div>
-        <br>
-        <button class="block mx-auto px-5 py-2.5 bg-gray-700 text-white text-center border-none cursor-pointer">
-			<a class="line-through">Random button that does nothing</a>
-		</button>
-		<button class="block mx-auto px-5 py-2.5 bg-white text-black text-center border-none cursor-pointer">
-			<SocialLink platform="Random Wikipedia page" iconName='Wikipedia' url="https://wikipedia.org/wiki/Special:Random" color="black" />
-		</button>
-        
-        <!-- Featured Content Section -->
-        <section class="flex flex-col w-full sm:w-fit max-w-4xl mt-10">
-            <h2 class="text-2xl font-bold text-center mb-5">Featured Content</h2>
-            <div class="flex flex-col flex-wrap justify-center items-center gap-2 lg:gap-5">
-            </div>
-        </section>
-    </main>
+
+    <div class="flex lg:flex-row flex-col justify-center gap-3.5 mb-5">
+      <button class="block mx-auto px-5 py-2.5 bg-black text-white text-center border-none cursor-pointer">
+        <SocialLink
+          platform="GitHub"
+          IconComponent={Github}
+          url="https://github.com/KTrain5169/"
+        />
+      </button>
+      <button class="block mx-auto px-5 py-2.5 bg-orange-700 text-white text-center border-none cursor-pointer">
+        <SocialLink
+          platform="GitLab"
+          IconComponent={Gitlab}
+          url="https://gitlab.com/KTrain5169"
+        />
+      </button>
+      <button class="block mx-auto px-5 py-2.5 bg-blue-500 text-white text-center border-none cursor-pointer">
+        <SocialLink
+          platform="Bluesky"
+          IconComponent={Bluesky}
+          url="https://bsky.app/profile/ktrain5369.me/"
+        />
+      </button>
+      <button class="block mx-auto px-5 py-2.5 bg-indigo-700 text-white text-center border-none cursor-pointer">
+        <SocialLink
+          platform="Discord Server"
+          IconComponent={Discord}
+          url="https://discord.gg/G6YvWhctjk"
+        />
+      </button>
+      <button class="block mx-auto px-5 py-2.5 bg-purple-700 text-white text-center border-none cursor-pointer">
+        <SocialLink
+          platform="Twitch"
+          IconComponent={Twitch}
+          url="https://www.twitch.tv/ktrain5369"
+        />
+      </button>
+      <button class="block mx-auto px-5 py-2.5 bg-red-700 text-white text-center border-none cursor-pointer">
+        <SocialLink
+          platform="YouTube"
+          IconComponent={Youtube}
+          url="https://www.youtube.com/@KTrain5369"
+        />
+      </button>
+    </div>
+    <br />
+    <div class="flex lg:flex-row flex-col justify-center gap-3.5 mb-5">
+      <button class="block mx-auto px-5 py-2.5 bg-gray-500 text-white text-center border-none cursor-pointer">
+        <SocialLink
+          platform="Website (KTools2202)"
+          IconComponent={Astro}
+          url="https://ktools2202.github.io/"
+        />
+      </button>
+      <button class="block mx-auto px-5 py-2.5 bg-black text-white text-center border-none cursor-pointer">
+        <SocialLink
+          platform="GitHub (KTools2202)"
+          IconComponent={Github}
+          url="https://github.com/KTools2202/"
+        />
+      </button>
+      <button class="block mx-auto px-5 py-2.5 bg-orange-700 text-white text-center border-none cursor-pointer">
+        <SocialLink
+          platform="GitLab (KTools2202)"
+          IconComponent={Gitlab}
+          url="https://gitlab.com/KTools2202/"
+        />
+      </button>
+    </div>
+    <br />
+    <button class="block mx-auto px-5 py-2.5 bg-gray-700 text-white text-center border-none cursor-pointer">
+      <a class="line-through">Random button that does nothing</a>
+    </button>
+    <button class="block mx-auto px-5 py-2.5 bg-white text-black text-center border-none cursor-pointer">
+      <SocialLink
+        platform="Random Wikipedia page"
+        IconComponent={Wikipedia}
+        url="https://wikipedia.org/wiki/Special:Random"
+        color="black"
+      />
+    </button>
+
+    <!-- Featured Content Section -->
+    <section class="flex flex-col w-full sm:w-fit max-w-4xl mt-10">
+      <h2 class="text-2xl font-bold text-center mb-5">Featured Content</h2>
+      <div class="flex flex-col flex-wrap justify-center items-center gap-2 lg:gap-5"></div>
+    </section>
+  </main>
 </BaseLayout>

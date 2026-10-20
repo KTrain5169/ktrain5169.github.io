@@ -1,26 +1,21 @@
 ---
-import * as LucideIcons from "@lucide/astro";
-import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import type { AstroComponent } from '@lucide/astro';
+import type { AstroComponentFactory } from 'astro/runtime/server/render/astro/factory.js';
+
+interface Props {
+  IconComponent: AstroComponent;
+  size: number;
+  colour?: string;
+  class?: string;
+}
 
 // Props passed to the LucideIcon component
-const { icon, size = 24, color = "white", ...props } = Astro.props;
-
-// Helper type to restrict icon name to valid keys
-type LucideIconKeys = keyof typeof LucideIcons;
-
-const toPascalCase = (str: string) =>
-  str.replace(/(^\w|-\w)/g, (match) => match.replace("-", "").toUpperCase());
-
-const lucideIconMap = { ...LucideIcons };
-const lucideIconName = toPascalCase(icon); // Convert lucideIconNames to PascalCase
-const IconComponent = lucideIconMap[lucideIconName as LucideIconKeys] as
-  | AstroComponentFactory
-  | undefined;
-
-// Handle the case when the icon is not found
-if (!IconComponent) {
-  throw new Error(`Lucide icon ${icon} not found`);
-}
+const {
+  IconComponent,
+  size = 24,
+  colour = "white",
+  class: className,
+} = Astro.props;
 ---
 
-<IconComponent color={color} size={size} {...props} />
+<IconComponent color={colour} size={size} class={className} />

@@ -1,18 +1,23 @@
 ---
-const { name, description, url, iconName, iconType = 'lucide' } = Astro.props;
-import Icon from './Icon.astro';
-import LucideIcon from './LucideIcon.astro';
+import type { AstroComponentFactory } from 'astro/runtime/server/render/astro/factory.js';
+const { name, description, url, IconComponent } = Astro.props;
 
-const isLucide = iconType.toLowerCase() === 'lucide';
+interface Props {
+    name: string
+    description: string
+    url: string
+    IconComponent: AstroComponentFactory
+}
+
+import SimpleIcon from "./SimpleIcon.astro";
 ---
 
 <div class="p-4 bg-gray-800 rounded-lg shadow-lg text-white">
-    <div class="flex items-center gap-2 mb-2">
-        {isLucide
-            ? <LucideIcon icon={iconName} size={24} />
-            : <Icon icon={iconName} size={24} />
-        }
-        <a href={url} class="text-white no-underline font-bold">{name}</a>
-    </div>
-    <p class="text-sm text-gray-400">{description}</p>
+  <div class="flex items-center gap-2 mb-2">
+    <SimpleIcon IconComponent={IconComponent} size={24} />
+    <a href={url} class="text-white no-underline font-bold">
+      {name}
+    </a>
+  </div>
+  <p class="text-sm text-gray-400">{description}</p>
 </div>

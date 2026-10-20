@@ -1,9 +1,17 @@
 ---
-const { platform, url, iconName, color = 'white' } = Astro.props;
-import Icon from './Icon.astro';
+import type { AstroComponentFactory } from "astro/runtime/server/render/astro/factory.js";
+import SimpleIcon from "./SimpleIcon.astro";
+
+const { platform, url, IconComponent, color = "white" } = Astro.props;
+interface Props {
+  platform: string;
+  url: string;
+  IconComponent: AstroComponentFactory;
+  color?: string;
+}
 ---
 
 <a href={url} class="flex items-center gap-2 no-underline">
-  <Icon icon={iconName} size={24} color={color} />
+  <SimpleIcon IconComponent={IconComponent} size={24} color={color} />
   <span>{platform}</span>
 </a>

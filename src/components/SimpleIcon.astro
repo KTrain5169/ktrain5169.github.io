@@ -1,0 +1,15 @@
+---
+import type { AstroComponentFactory } from 'astro/runtime/server/render/astro/factory.js';
+
+interface Props {
+  IconComponent: AstroComponentFactory
+  size?: number
+  color?: string
+  class?: string
+}
+
+// Props passed to the Icon component
+const { IconComponent, size = 24, color = "white", class: className } = Astro.props;
+---
+
+<IconComponent color={color} size={size} class={className} />

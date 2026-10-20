@@ -1,6 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import AttribsBlock from '../components/AttribsBlock.astro'
+
+import Astro from 'simple-icons-astro/Astro';
+import Tailwindcss from 'simple-icons-astro/Tailwindcss';
+import Typescript from 'simple-icons-astro/Typescript';
+import Nodedotjs from 'simple-icons-astro/Nodedotjs';
+import Pnpm from 'simple-icons-astro/Pnpm';
+import Npm from 'simple-icons-astro/Npm';
+import Simpleicons from 'simple-icons-astro/Simpleicons';
+import Lucide from 'simple-icons-astro/Lucide';
+import Git from 'simple-icons-astro/Git';
+import Github from 'simple-icons-astro/Github';
+import Gitlab from 'simple-icons-astro/Gitlab';
+import Dependabot from 'simple-icons-astro/Dependabot';
+import Githubactions from 'simple-icons-astro/Githubactions';
+import Githubpages from 'simple-icons-astro/Githubpages';
+import Cloudflare from 'simple-icons-astro/Cloudflare';
 ---
 
 <BaseLayout title="Attributions" description="Certain site elements are made possible by other people/software. This page lists them." tags="attributions">
@@ -14,57 +30,49 @@ import AttribsBlock from '../components/AttribsBlock.astro'
               name="Astro"
               description="Astro is a modern static site generator, which was used to create this site."
               url="https://astro.build"
-              iconName="Astro"
-              iconType="simple"
+              IconComponent={Astro}
             />
             <AttribsBlock
               name="TailwindCSS"
               description="TailwindCSS is a utility-first CSS framework, used to make styling this site less of a headache."
               url="https://tailwindcss.com"
-              iconName="Tailwindcss"
-              iconType="simple"
+              IconComponent={Tailwindcss}
             />
             <AttribsBlock
               name="TypeScript"
               description="TypeScript is a typed superset of JavaScript, used with Astro's content collections feature. It also helps with code completion and error checking."
               url="https://typescriptlang.org"
-              iconName="Typescript"
-              iconType="simple"
+              IconComponent={Typescript}
             />
             <AttribsBlock
               name="Node.js"
               description="Node.js is a JavaScript runtime, used here because the various technologies to build the site is on Node.js."
               url="https://nodejs.org"
-              iconName="Nodedotjs"
-              iconType="simple"
+              IconComponent={Nodedotjs}
             />
             <AttribsBlock
               name="pnpm"
               description="pnpm is a fast, disk space efficient package manager, used to install the dependencies for this site."
               url="https://pnpm.io"
-              iconName="Pnpm"
-              iconType="simple"
+              IconComponent={Pnpm}
             />
             <AttribsBlock
               name="npm"
               description="npm is the bundled package manager for Node.js, currently temporarily replacing pnpm for managing packages on local environment (no longer true). They also run the npm registry for storing Node.js packages."
               url="https://npmjs.org"
-              iconName="Npm"
-              iconType="simple"
+              IconComponent={Npm}
             />
             <AttribsBlock
               name="Simple Icons"
               description="Simple Icons is a collection of SVG icons for popular brands, used to add logos to various elements such as this page."
               url="https://simpleicons.org/"
-              iconName="Simpleicons"
-              iconType="simple"
+              IconComponent={Simpleicons}
             />
             <AttribsBlock
               name="Lucide Icons"
               description="Lucide Icons is another SVG icons collection for various things around us, used to add small icons to various elements."
               url="https://lucide.dev/"
-              iconName="Lucide"
-              iconType="simple"
+              IconComponent={Lucide}
             />
         </div>
         <h2 class="font-bold text-center my-5">Code hosting & maintenance</h2>
@@ -73,29 +81,25 @@ import AttribsBlock from '../components/AttribsBlock.astro'
               name="Git"
               description="Git is a distributed version control system for code, used for version control on this site."
               url="https://git-scm.com/"
-              iconName="Git"
-              iconType="simple"
+              IconComponent={Git}
             />
             <AttribsBlock
               name="GitHub"
               description="GitHub is a code hosting platform, used to host the source code for this site."
               url="https://github.com/"
-              iconName="github"
-              iconType="simple"
+              IconComponent={Github}
             />
             <AttribsBlock
               name="GitLab"
               description="GitLab is similar to GitHub as a code hostiing platform. A copy of this site's source code (mirror) is stored on GitLab."
               url="https://gitlab.com/"
-              iconName="gitlab"
-              iconType="simple"
+              IconComponent={Gitlab}
             />
             <AttribsBlock
               name="Dependabot"
               description="Dependabot is an app that checks for outdated/vulnerable dependencies in a repository, used to keep dependencies up-to-date."
               url="https://github.com/dependabot"
-              iconName="Dependabot"
-              iconType="simple"
+              IconComponent={Dependabot}
             />
         </div>
         <h2 class="font-bold text-center my-5">Build, deployment & hosting</h2>
@@ -104,22 +108,19 @@ import AttribsBlock from '../components/AttribsBlock.astro'
               name="GitHub Actions"
               description="GitHub Actions is a CI/CD service integrated into GitHub, used to build & deploy this site."
               url="https://github.com/apps/github-actions"
-              iconName="Githubactions"
-              iconType="simple"
+              IconComponent={Githubactions}
             />
             <AttribsBlock
               name="GitHub Pages"
               description="GitHub Pages is a static website hosting service, used to serve this website as the origin point."
               url="https://pages.github.com"
-              iconName="Githubpages"
-              iconType="simple"
+              IconComponent={Githubpages}
             />
             <AttribsBlock
               name="CloudFlare"
               description="CloudFlare is a CDN and DNS provider, used to cache and serve this site to visitors. It also provides DDoS protection through its CDN network."
               url="https://cloudflare.com"
-              iconName="Cloudflare"
-              iconType="simple"
+              IconComponent={Cloudflare}
             />
         </div>
     </main>
