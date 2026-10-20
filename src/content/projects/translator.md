@@ -1,6 +1,7 @@
 ---
 title: "Translator"
 tags: ["i18n", "translations", "python"]
+former: true
 description: "Convert your sentences to silly text translations!"
 image: "Translator.ico"
 maintainer: "KTrain5369"
