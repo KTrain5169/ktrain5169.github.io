@@ -1,24 +1,16 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "NodeNext",
+    "module": "preserve",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "allowImportingTsExtensions": true,
     "noEmit": true,
-    "types": [
-      "astro"
-    ],
-    "moduleResolution": "nodenext"
+    "types": ["astro"],
+    "moduleResolution": "bundler"
   },
-  "include": [
-    "src/**/*",
-    "./worker-configuration.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+  "include": ["src/**/*", "./worker-configuration.d.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }

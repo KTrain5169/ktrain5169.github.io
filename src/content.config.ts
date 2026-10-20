@@ -1,7 +1,7 @@
 // 1. Import utilities from `astro:content`
 import { defineCollection, reference } from "astro:content";
 import { glob, file } from "astro/loaders";
-import z from 'zod'
+import z from "zod";
 
 // 2. Define your collection(s)
 const blogCollection = defineCollection({
@@ -24,7 +24,7 @@ const projectCollection = defineCollection({
     description: z.string().optional(),
     image: z.string().optional(),
     creationDate: z.coerce.date().optional(),
-    former: z.boolean(),
+    former: z.boolean().optional(),
     maintainer: z.string().optional(),
     link: z.string().optional(),
     download: z.string().optional(),

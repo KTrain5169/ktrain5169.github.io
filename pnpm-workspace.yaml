@@ -1,14 +1,14 @@
 allowBuilds:
-  '@tailwindcss/oxide': false
+  "@tailwindcss/oxide": false
   esbuild: false
   sharp: false
   workerd: false
 minimumReleaseAgeExclude:
-  - '@cloudflare/workerd-darwin-64@1.20261019.1'
-  - '@cloudflare/workerd-darwin-arm64@1.20261019.1'
-  - '@cloudflare/workerd-linux-64@1.20261019.1'
-  - '@cloudflare/workerd-linux-arm64@1.20261019.1'
-  - '@cloudflare/workerd-windows-64@1.20261019.1'
+  - "@cloudflare/workerd-darwin-64@1.20261019.1"
+  - "@cloudflare/workerd-darwin-arm64@1.20261019.1"
+  - "@cloudflare/workerd-linux-64@1.20261019.1"
+  - "@cloudflare/workerd-linux-arm64@1.20261019.1"
+  - "@cloudflare/workerd-windows-64@1.20261019.1"
   - miniflare@5.20261019.0-beta
   - workerd@1.20261019.1
   - wrangler@4.151.2
