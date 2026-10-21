@@ -11,11 +11,35 @@ export default defineConfig({
       tasks: true,
     },
     tasks: {
-      build: "astro build",
+      build: {
+        command: "astro build",
+        cache: {
+          input: [{ auto: true }, "!.astro/**", "!.wrangler/**"],
+        },
+      },
       check: "astro check && vp check",
       "check:fix": "vp check --fix",
-      prepare: "vp config && astro sync",
-      "generate-types": "wrangler types",
+      prepare: {
+        command: "vpr hooks:setup && vpr sync && vpr generate-types",
+      },
+      "hooks:setup": {
+        command: "vp config",
+        cache: {
+          output: [{ auto: true }, ".vite-hooks/_"],
+        },
+      },
+      sync: {
+        command: "astro sync",
+        cache: {
+          input: [{ auto: true }, "!.astro/**"],
+        },
+      },
+      "generate-types": {
+        command: "wrangler types",
+        cache: {
+          output: [{ auto: true }, "./worker-configuration.d.ts"],
+        },
+      },
     },
   },
   fmt: {

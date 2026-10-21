@@ -1,0 +1,12 @@
+---
+const { url, platform } = Astro.props;
+interface Props {
+    url: string
+    platform: string
+}
+---
+
+<a href={url} class="flex items-center gap-2 no-underline">
+  <slot />
+  <span>{platform}</span>
+</a>

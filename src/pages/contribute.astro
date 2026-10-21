@@ -1,11 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SimpleIcon from "../components/SimpleIcon.astro";
-import LucideIcon from "../components/LucideIcon.astro";
 
 import Nodedotjs from "simple-icons-astro/Nodedotjs";
 import Pnpm from "simple-icons-astro/Pnpm";
-import Astro from "simple-icons-astro/Astro"
+import AstroIcon from "simple-icons-astro/Astro"
 import Git from 'simple-icons-astro/Git'
 import GitPullRequestCreateArrow from '@lucide/astro/icons/git-pull-request-create-arrow'
 import GitFork from '@lucide/astro/icons/git-fork'
@@ -32,11 +30,11 @@ import MessageCircle from '@lucide/astro/icons/message-circle'
     <p class="text-center">Extra pre-requisites:</p>
     <ul class="text-center list-disc list-inside">
       <li class="flex">
-        <SimpleIcon IconComponent={Nodedotjs} size={24} class="mr-4" />
+        <Nodedotjs size={24} color="white" class="mr-4" />
         Node.js
       </li>
       <li class="flex">
-        <SimpleIcon IconComponent={Pnpm} size={24} class="mr-4" />
+        <Pnpm size={24} color="white" class="mr-4" />
         pnpm
       </li>
     </ul>
@@ -44,39 +42,39 @@ import MessageCircle from '@lucide/astro/icons/message-circle'
     <p class="text-center">To contribute:</p>
     <ol class="list-decimal list-inside text-center">
       <li class="flex">
-        <LucideIcon IconComponent={GitFork} size={24} class="mr-4" />
+        <GitFork color="white" size={24} class="mr-4" />
         Fork the repository on GitHub or GitLab, then clone it to your computer
         or open web IDE.
       </li>
       <li class="flex">
-        <SimpleIcon IconComponent={Pnpm} size={24} class="mr-4" />
+        <Pnpm size={24} color="white" class="mr-4" />
         Run "pnpm install" to install dependencies (local machine only).
       </li>
       <li class="flex">
-        <LucideIcon IconComponent={GitBranch} size={24} class="mr-4" />
+        <GitBranch color="white" size={24} class="mr-4" />
         Make your changes in a new(!) branch.
       </li>
       <li class="flex">
-        <SimpleIcon IconComponent={Astro} size={24} class="mr-4" />
+        <AstroIcon size={24} color="white" class="mr-4" />
         Run the Astro dev/preview server using "pnpm dev".
         Check your changes to ensure they work as intended. (local
         machine only)
       </li>
       <li class="flex">
-        <SimpleIcon IconComponent={Git} size={24} class="mr-4" />
+        <Git size={24} color="white" class="mr-4" />
         Commit your changes with "git commit" and push them to your fork using
         "git push".
       </li>
       <li class="flex">
-        <LucideIcon
-          IconComponent={GitPullRequestCreateArrow}
+        <GitPullRequestCreateArrow
+          color="white"
           size={24}
           class="mr-4"
         />
         Submit a pull request for review.
       </li>
       <li class="flex">
-        <LucideIcon IconComponent={MessageCircle} size={24} class="mr-4" />
+        <MessageCircle color="white" size={24} class="mr-4" />
         Await for review and approval/change requests.
       </li>
     </ol>
